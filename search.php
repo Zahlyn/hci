@@ -1,8 +1,7 @@
 <?php include 'partials/html-head.php'; ?>
     <h1>Hi!</h1>
     <p>Now time for testing. Search overview</p>
-    <button type="button" id="loadData" onclick="loadJson">Load JSON</button><br>
-    <form id="searchForm" action="search.php" method="get">
+    <form id="searchForm" action="" method="get">
         <input type="text" id="searchBar" name="query" placeholder="Search course...">
         <input type="submit" id="searchSubmit" value="Search">
     </form>
@@ -25,17 +24,19 @@
         }
     ?>
     <script>
-        function loadJson() {
+        function loadJson(searchQuery, category, program) {
             $(function(){
-                    var url = 'https://script.google.com/macros/s/AKfycbx5zKAL58XAs8GAWrIP0XHQsIbmSusaYtWDS6Y8-u9kB_09h7Y/exec';
-                    $.getJSON(url,function(data){
+                var url = 'https://script.google.com/macros/s/AKfycbx5zKAL58XAs8GAWrIP0XHQsIbmSusaYtWDS6Y8-u9kB_09h7Y/exec';
+                $.getJSON(url,function(data){
                     var html = $('#tableBody').html();
-                    console.log(html);
-                    var searchQuery = "<?php echo $searchQuery; ?>".toLowerCase();
+                    
                     $('#searchBar').val(searchQuery);
                     $.each(data, function(key,val){
-                        if(val.length >= 8 && (searchQuery == val[1].toLowerCase() || val[0].toLowerCase().search(searchQuery) != -1 || searchQuery == val[6].toLowerCase() || searchQuery == '')) {
-                            //console.log(val);
+                        if(val.length >= 8 && (searchQuery == val[1].toLowerCase() 
+                            || val[0].toLowerCase().search(searchQuery) != -1 
+                            || searchQuery == val[6].toLowerCase() 
+                            || searchQuery == '')) {
+
                             html += '<tr>';
                             html += '<td>' + val[0] + '</td>';
                             html += '<td>' + val[6] + '</td>';
@@ -48,6 +49,11 @@
             })
         }
 
-        $(document).ready(loadJson);
+        function loadQuery() {
+            var searchQuery = "<?php echo $searchQuery; ?>".toLowerCase();
+            loadJson(searchQuery, '', '');
+        }
+
+        $(document).ready(loadQuery);
     </script>
 <?php include 'partials/html-footer.php'; ?>
