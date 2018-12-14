@@ -31,12 +31,10 @@
                     $.getJSON(url,function(data){
                     var html = $('#tableBody').html();
                     console.log(html);
-                    var searchQuery = "<?php echo $searchQuery; ?>";
+                    var searchQuery = "<?php echo $searchQuery; ?>".toLowerCase();
                     $('#searchBar').val(searchQuery);
                     $.each(data, function(key,val){
-                        // TODO: implement actual search function
-                        // Currently only an exact match with META field works
-                        if((val.length >= 8 && val[1] == searchQuery) || searchQuery == '') {
+                        if(val.length >= 8 && (searchQuery == val[1].toLowerCase() || val[0].toLowerCase().search(searchQuery) != -1 || searchQuery == val[6].toLowerCase() || searchQuery == '')) {
                             //console.log(val);
                             html += '<tr>';
                             html += '<td>' + val[0] + '</td>';
