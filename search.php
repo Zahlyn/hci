@@ -1,5 +1,8 @@
 <?php include 'partials/html-head.php'; ?>
     <h1>Hi!</h1>
+    <form action="myCourses.php">
+        <input type="submit" value="My Courses">
+    </form>
     <p>Now time for testing. Search overview</p>
     <form id="searchForm" action="" method="get">
         <input type="text" id="searchBar" name="query" placeholder="Search course...">
@@ -20,7 +23,6 @@
         </tbody>
     </table>
     <button type="button" id="enrollSubmit" onclick="enroll()">Enroll</button>
-    <button type="button" id="debugButton" onclick="check()">checkEnrolledInConsole</button>
     <?php
         $searchQuery = '';
         if (!empty($_GET)) {
@@ -88,12 +90,6 @@
                 }
                 tableRows[i].children[0].children[0].checked = false;
             }
-            check();
-        }
-
-        function check() {
-            var courseArray = JSON.parse(window.sessionStorage.getItem("courseArray"));
-            console.log(courseArray);
         }
     </script>
 <?php include 'partials/html-footer.php'; ?>
