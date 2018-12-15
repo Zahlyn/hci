@@ -1,5 +1,5 @@
 <?php include 'partials/html-head.php'; ?>
-    <h1>Hi!</h1>
+    
     <form action="myCourses.php">
         <input type="submit" value="My Courses">
     </form>

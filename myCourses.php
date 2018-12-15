@@ -1,5 +1,5 @@
 <?php include 'partials/html-head.php'; ?>
-    <h1>Hi!</h1>
+    
     <p>Now time for testing</p>
     <br><br><br>
     <table>
