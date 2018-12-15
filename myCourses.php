@@ -28,7 +28,7 @@
 
                             html += '<tr>';
                             html += '<td><input type="checkbox" id="unenrollCheckbox' + key + '"</td>'
-                            html += '<td>' + val[0] + '</td>';
+                            html += '<td><a href="coursePage.php?courseCode=' + val[6] + '">' + val[0] + '</a></td>';
                             html += '<td>' + val[6] + '</td>';
                             html += '<td>' + val[7] + '</td>';
                             html += '</tr>';
