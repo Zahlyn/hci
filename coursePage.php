@@ -1,14 +1,6 @@
 <?php include 'partials/html-head.php'; ?>
     <div class="row">
         <div class="col-sm">
-            <form action="myCourses.php">
-                <input type="submit" value="My Courses" class="btn btn-primary">
-            </form>
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-sm">
             <p>Now time for testing. Course page</p>
         </div>
     </div>
