@@ -1,4 +1,4 @@
-<div class="modal" tabindex="-1" role="dialog" id="enrollModal">
+<div class="modal fade" tabindex="-1" role="dialog" id="enrollModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -19,7 +19,7 @@
     </div>
 
     
-    <div class="modal" tabindex="-1" role="dialog" id="unenrollModal">
+    <div class="modal fade" tabindex="-1" role="dialog" id="unenrollModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <div class="modal" tabindex="-1" role="dialog" id="enrollSingleModal">
+    <div class="modal fade" tabindex="-1" role="dialog" id="enrollSingleModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -60,7 +60,7 @@
     </div>
 
     
-    <div class="modal" tabindex="-1" role="dialog" id="unenrollSingleModal">
+    <div class="modal fade" tabindex="-1" role="dialog" id="unenrollSingleModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -80,7 +80,7 @@
         </div>
     </div>
 
-    <div class="modal" tabindex="-1" role="dialog" id="successModal">
+    <div class="modal fade" tabindex="-1" role="dialog" id="successModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

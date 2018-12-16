@@ -2,6 +2,8 @@
 @import 'colors';
 @import 'buttons';
 
+@import 'header';
+
 // TEXT
 body {
     color: $text-color;
@@ -33,62 +35,6 @@ a.logotype {
     }
 }
 
-header {
-    padding: 15px 0;
-    margin-bottom: 30px;
-    ul {
-        list-style: none;
-        margin: 18px 0 0 0;
-        padding: 0;
-        float: right;
-
-        li {
-            display: inline;
-            margin-right: 15px;
-
-            a {
-                color: $text-color;
-                font-size: $font-size - 2;
-                font-weight: 700;
-
-                i {
-                    margin-right: 8px;
-                    color: $icon-color;
-                }
-
-                &:hover {
-                    i {
-                        color: $tertiary-button-hover;
-                    }
-                }
-                &:active, &:focus {
-                    i {
-                        color: $tertiary-button-active;
-                    }
-                }
-
-                &.inactive {
-                    color: $inactive !important;
-
-                    i {
-                        color: $inactive !important;
-                    }
-                    &:hover {
-                        i {
-                            color: $inactive !important;
-                        }
-                    }
-                    &:active, &:focus {
-                        i {
-                            color: $inactive !important;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
 .front-page {
     text-align: center;
     
@@ -105,5 +51,32 @@ header {
 
     .btn {
         min-width: 120px;
+    }
+
+    ul.category-list {
+        list-style: none;
+        margin: 0 50px 30px 50px;
+        padding: 0 0 30px 0;
+
+        li {
+            list-style: none;
+            display: inline;
+            border-right: 1px solid $icon-color;
+            padding: 0 15px;
+
+            &:last-child{
+                border-right: none;
+            }
+        }
+    }
+}
+
+.academic-requirements {
+
+    &.academic-requirements-home {
+        background: $background-grey;
+        border-radius: $border-radius;
+        padding: 30px;
+        margin: 0 50px;
     }
 }

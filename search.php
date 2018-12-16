@@ -163,30 +163,4 @@
             $('#hiddenForm').submit();
         }
     </script>
-
-    
-
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-    </button>
-
-    <div class="modal" tabindex="-1" role="dialog" id="exampleModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Enrollment</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Are you sure you wish to enroll in the course(s)?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Yes, enroll in all</button>
-                </div>
-            </div>
-        </div>
-    </div>
 <?php include 'partials/html-footer.php'; ?>

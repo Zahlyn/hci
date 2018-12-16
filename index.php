@@ -17,14 +17,20 @@
     </div>
     <div class="row">
         <div class="col-sm">
-            <a href="search.php?category=Music,%20art%20and%20design">Music, art and design</a> <br>
-            <a href="search.php?category=Natural%20and%20Computer%20sciences">Natural and Computer sciences</a> <br><br>
+            <ul class="category-list">
+                <li>
+                    <a href="search.php?category=Music,%20art%20and%20design">Music, art and design</a>
+                </li>
+                <li>
+                    <a href="search.php?category=Natural%20and%20Computer%20sciences">Natural and Computer sciences</a>
+                </li>
+            </ul> 
         </div>
     </div>
     <div class="row">
-        <div class="col-sm">
+        <div class="col-sm academic-requirements academic-requirements-home">
             <h5>See a list of courses based on program relevance or academic requirements</h5>
-            <a href="search.php?program=Media"><button type="button" class="btn btn-primary">Program requirements</button></a>
+            <a href="search.php?program=Media"><button type="button" class="btn btn-tertiary">Program requirements</button></a>
         </div>
     </div>
 </div>
