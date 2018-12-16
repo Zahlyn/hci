@@ -1,7 +1,38 @@
+@import 'variables';
 @import 'colors';
 @import 'buttons';
 
 // TEXT
 body {
     color: $text-color;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+}
+
+// INDEX
+a.logotype {
+
+    img {
+        width: 200px;
+        height: auto;
+    }
+}
+
+.front-page {
+    text-align: center;
+    
+    .search-field {
+        max-width: 500px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 15px;
+
+        box-shadow: $box-shadow;
+        height: 49px;
+        
+    }
+
+    .btn {
+        min-width: 120px;
+    }
 }
