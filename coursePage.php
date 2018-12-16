@@ -90,6 +90,7 @@
                         }
                     }
                     window.sessionStorage.setItem("courseArray", JSON.stringify(courseArray));
+                    alert("Unenrolled successfully");
                     location.reload();
                 }
             } else { // enroll
@@ -106,6 +107,7 @@
                         courseArray.push(searchQuery);
                     }
                     window.sessionStorage.setItem("courseArray", JSON.stringify(courseArray));
+                    alert("Enrolled successfully");
                     location.reload();
                 }
             }

@@ -95,6 +95,7 @@
             var conf = confirm("Are you sure you wish to enroll in the course(s)?");
             if(conf) {
                 var tableRows = document.getElementById('tableBody').children;
+                var checkedCourses = 0;
                 for(var i = 0; i < tableRows.length; i++) {
                     var row = tableRows[i];
                     if(row.children[0].children[0].checked) {
@@ -107,11 +108,13 @@
                         }
                         if(!duplicate) {
                             courseArray.push(row.children[2].innerHTML);
+                            checkedCourses++;
                         }
                         window.sessionStorage.setItem("courseArray", JSON.stringify(courseArray));
                     }
                     tableRows[i].children[0].children[0].checked = false;
                 }
+                alert("Enrolled successfully in " + checkedCourses + " course(s)!");
             }
         }
     </script>
