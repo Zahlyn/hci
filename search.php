@@ -32,14 +32,17 @@
                 </div>
             </form>
         </div>
+        <div id="tags" class="col-sm">
+                <h3> tags: </h3>
+        </div>
     </div>
     <div class="row">
         <div class="col-sm">
             <form id="hiddenForm" action="" method="get">
                 <div>
-                    <input type="hidden" name="program" value="<?php echo $program; ?>">
+                    <input type="hidden" id="programHidden" name="program" value="<?php echo $program; ?>">
                     <input type="hidden" id="categoryHidden" name="category" value="<?php echo $category; ?>">
-                    <input type="hidden" name="query" value="<?php echo $searchQuery; ?>">
+                    <input type="hidden" id="queryHidden" name="query" value="<?php echo $searchQuery; ?>">
                 </div>
             </form>
             <p>Example category button</p>
@@ -100,11 +103,29 @@
             var category = "<?php echo $category; ?>".toLowerCase();
             var program = "<?php echo $program; ?>".toLowerCase();
             loadJson(searchQuery, category, program);
+            showProgramCategoryTags(program, category);
+        }
+
+        function removeTag(type) {
+            $('#'+type+'Hidden').attr("value", '');
+            $('#hiddenForm').submit();
         }
         
+        function showProgramCategoryTags(program, category) {
+            var html = $('#tags').html();
+            if(program != ''){
+                html += "<p onclick=\"removeTag('program')\">Program: " + program + "</p>";
+            }
+            if(category != ''){
+                html += "<p onclick=\"removeTag('category')\">Category: " + category + "</p>";
+            }
+            $('#tags').html(html);
+        }
+
         function init() {
             
             loadQuery();
+            
         }
 
         $(document).ready(init);
