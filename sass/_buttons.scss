@@ -1,0 +1,47 @@
+.btn {
+    border: none;
+    box-shadow:  2px 2px 2px rgba(44, 47, 75, .15);
+
+    &-primary {
+        background: $primary-button;
+
+        &:link, &:hover {
+            background: $primary-button-hover;
+        }
+        &:active, &:not(:disabled):not(.disabled):active {
+            background: $primary-button-active;
+        }
+    }
+
+    &-secondary {
+        border: $primary-button 1px solid;
+        background: white;
+        color: $text-color;
+
+        &:link, &:hover, &:focus {
+            border: $primary-button-hover 2px solid;
+            background: white;
+            color: $text-color;
+            box-shadow: none;
+        }
+        &:active, &:not(:disabled):not(.disabled):active {
+            border: $primary-button-active 2px solid;
+            background: white;
+            color: $text-color;
+        }
+    }
+
+    &-tertiary {
+        background: $tertiary-button;
+        color: white;
+
+        &:link, &:hover {
+            background: $tertiary-button-hover;
+            color: white;
+        }
+      &:active, &:not(:disabled):not(.disabled):active {
+            background: $tertiary-button-active;
+            color: white;
+        }
+    }
+}

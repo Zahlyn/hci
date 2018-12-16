@@ -1,8 +1,7 @@
 @import 'colors';
+@import 'buttons';
 
-.btn {
-    border: none;
-    &-primary {
-        background: $primary-button;
-    }
+// TEXT
+body {
+    color: $text-color;
 }
