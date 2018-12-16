@@ -1,21 +1,27 @@
 <?php include 'partials/html-head.php'; ?>
-    
-    <p>Now time for testing</p>
-    <br><br><br>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col"></th>
-                <th scope="col">Course</th>
-                <th scope="col">Code</th>
-                <th scope="col">Units</th>
-            </tr>
-        </thead>
-        <tbody id="tableBody">
+    <div class="row">
+        <div class="col-sm">
+            <p>Now time for testing</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Course</th>
+                        <th scope="col">Code</th>
+                        <th scope="col">Units</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
 
-        </tbody>
-    </table>
-    <button type="button" id="enrollSubmit" onclick="unenroll()" class="btn btn-primary">Unenroll</button>
+                </tbody>
+            </table>
+            <button type="button" id="enrollSubmit" onclick="unenroll()" class="btn btn-primary">Unenroll</button>
+        </div>
+    </div>        
     <script>
         function loadCourses() {
             var html = $('#tableBody').html();

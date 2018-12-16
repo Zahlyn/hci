@@ -1,30 +1,47 @@
 <?php include 'partials/html-head.php'; ?>
-    
-    <form action="myCourses.php">
-        <input type="submit" value="My Courses" class="btn btn-primary">
-    </form>
-    <p>Now time for testing. Search overview</p>
-    <form id="searchForm" action="" method="get">
-        <div class="form-group">
-            <input type="text" id="searchBar" name="query" placeholder="Search course..." class="form-control">
-            <input type="submit" id="searchSubmit" value="Search" class="btn btn-primary">
+    <div class="row">
+        <div class="col-sm">
+            <form action="myCourses.php">
+                <input type="submit" value="My Courses" class="btn btn-primary">
+            </form>
         </div>
-    </form>
-    <br><br><br>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col"></th>
-                <th scope="col">Course</th>
-                <th scope="col">Code</th>
-                <th scope="col">Units</th>
-            </tr>
-        </thead>
-        <tbody id="tableBody">
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <p>Now time for testing. Search overview</p>
+        </div>
+        <div class="col-sm">
+            Testing some more
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <form id="searchForm" action="" method="get" class="form-inline">
+                <div class="form-group">
+                    <input type="text" id="searchBar" name="query" placeholder="Search course..." class="form-control">
+                    <input type="submit" id="searchSubmit" value="Search" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Course</th>
+                        <th scope="col">Code</th>
+                        <th scope="col">Units</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
 
-        </tbody>
-    </table>
-    <button type="button" id="enrollSubmit" onclick="enroll()" class="btn btn-primary">Enroll</button>
+                </tbody>
+            </table>
+            <button type="button" id="enrollSubmit" onclick="enroll()" class="btn btn-primary">Enroll</button>
+        </div>
+    </div>
     <?php
         $searchQuery = '';
         if (!empty($_GET)) {

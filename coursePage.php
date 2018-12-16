@@ -1,12 +1,25 @@
 <?php include 'partials/html-head.php'; ?>
-    
-    <form action="myCourses.php">
-        <input type="submit" value="My Courses" class="btn btn-primary">
-    </form>
-    <p>Now time for testing. Course page</p>
-    <br><br><br>
-    <div id="courseInfo">
+    <div class="row">
+        <div class="col-sm">
+            <form action="myCourses.php">
+                <input type="submit" value="My Courses" class="btn btn-primary">
+            </form>
+        </div>
     </div>
+    
+    <div class="row">
+        <div class="col-sm">
+            <p>Now time for testing. Course page</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm">
+            <div id="courseInfo">
+            </div>
+        </div>
+    </div>
+    
     <?php
         $searchQuery = '';
         if (!empty($_GET)) {

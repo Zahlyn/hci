@@ -1,12 +1,19 @@
 <?php include 'partials/html-head.php'; ?>
-    
-    <p>Now time for testing. Index</p>
-    <form id="searchForm" action="search.php" method="get">
-        <div class="form-group">
-            <input type="text" id="searchBar" name="query" placeholder="Search course..." class="form-control">
-            <input type="submit" id="searchSubmit" value="Search" class="btn btn-primary">
+    <div class="row">
+        <div class="col-sm">
+            <p>Now time for testing. Index</p>
         </div>
-    </form>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <form id="searchForm" action="search.php" method="get" class="form-inline">
+                <div class="form-group">
+                    <input type="text" id="searchBar" name="query" placeholder="Search course..." class="form-control">
+                    <input type="submit" id="searchSubmit" value="Search" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+    </div>
     <script>
         function init() {
             var courses = [];
