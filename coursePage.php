@@ -1,7 +1,7 @@
 <?php include 'partials/html-head.php'; ?>
     
     <form action="myCourses.php">
-        <input type="submit" value="My Courses">
+        <input type="submit" value="My Courses" class="btn btn-primary">
     </form>
     <p>Now time for testing. Course page</p>
     <br><br><br>

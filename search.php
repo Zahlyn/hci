@@ -1,28 +1,30 @@
 <?php include 'partials/html-head.php'; ?>
     
     <form action="myCourses.php">
-        <input type="submit" value="My Courses">
+        <input type="submit" value="My Courses" class="btn btn-primary">
     </form>
     <p>Now time for testing. Search overview</p>
     <form id="searchForm" action="" method="get">
-        <input type="text" id="searchBar" name="query" placeholder="Search course...">
-        <input type="submit" id="searchSubmit" value="Search">
+        <div class="form-group">
+            <input type="text" id="searchBar" name="query" placeholder="Search course..." class="form-control">
+            <input type="submit" id="searchSubmit" value="Search" class="btn btn-primary">
+        </div>
     </form>
     <br><br><br>
-    <table>
+    <table class="table">
         <thead>
             <tr>
-                <th></th>
-                <th>Course</th>
-                <th>Code</th>
-                <th>Units</th>
+                <th scope="col"></th>
+                <th scope="col">Course</th>
+                <th scope="col">Code</th>
+                <th scope="col">Units</th>
             </tr>
         </thead>
         <tbody id="tableBody">
 
         </tbody>
     </table>
-    <button type="button" id="enrollSubmit" onclick="enroll()">Enroll</button>
+    <button type="button" id="enrollSubmit" onclick="enroll()" class="btn btn-primary">Enroll</button>
     <?php
         $searchQuery = '';
         if (!empty($_GET)) {

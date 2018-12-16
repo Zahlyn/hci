@@ -2,8 +2,10 @@
     
     <p>Now time for testing. Index</p>
     <form id="searchForm" action="search.php" method="get">
-        <input type="text" id="searchBar" name="query" placeholder="Search course...">
-        <input type="submit" id="searchSubmit" value="Search">
+        <div class="form-group">
+            <input type="text" id="searchBar" name="query" placeholder="Search course..." class="form-control">
+            <input type="submit" id="searchSubmit" value="Search" class="btn btn-primary">
+        </div>
     </form>
     <script>
         function init() {
