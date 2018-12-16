@@ -61,6 +61,57 @@ header {
           header ul li a.inactive:active i, header ul li a.inactive:focus i {
             color: #DFE0E3 !important; }
 
+.container-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  .container-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0; }
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #D1D2D7;
+  border-radius: 2px; }
+
+.container-checkbox:hover input ~ .checkmark {
+  background-color: #B0B2BA; }
+
+.container-checkbox input:checked ~ .checkmark {
+  background-color: #014189; }
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none; }
+
+.container-checkbox input:checked ~ .checkmark:after {
+  display: block; }
+
+.container-checkbox .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
 body {
   color: #3B3E4C;
   font-family: 'Open Sans', sans-serif;
@@ -188,50 +239,6 @@ a.logotype img {
     padding: 0; }
     .collapsable-categories ul li {
       list-style: none; }
-  .collapsable-categories .container-checkbox {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; }
-  .collapsable-categories input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0; }
-  .collapsable-categories .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    background-color: #D1D2D7;
-    border-radius: 2px; }
-  .collapsable-categories .container-checkbox:hover input ~ .checkmark {
-    background-color: #B0B2BA; }
-  .collapsable-categories .container-checkbox input:checked ~ .checkmark {
-    background-color: #014189; }
-  .collapsable-categories .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none; }
-  .collapsable-categories .container-checkbox input:checked ~ .checkmark:after {
-    display: block; }
-  .collapsable-categories .container-checkbox .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg); }
   .collapsable-categories-link {
     display: inline-block;
     margin: 8px 0; }
@@ -239,5 +246,27 @@ a.logotype img {
 button.btn-search-enroll {
   float: right;
   margin: 8px 0; }
+
+table thead {
+  border: none;
+  background: #ECEDEF;
+  font-weight: 700;
+  border-radius: 4px; }
+  table thead th {
+    border: none !important; }
+table tr {
+  border: none; }
+  table tr:hover {
+    background: #F9F9F9; }
+  table tr td {
+    border: none !important; }
+table .table-title {
+  font-weight: 700; }
+table .checkbox-exam {
+  margin-left: 15px; }
+table .table-period {
+  color: #B0B2BA;
+  font-size: 13.125px;
+  margin-left: 10px; }
 
 /*# sourceMappingURL=base.css.map */

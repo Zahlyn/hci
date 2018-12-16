@@ -14,14 +14,6 @@
         }
     ?>
     <div class="row">
-        <div class="col-sm">
-            <p>Now time for testing. Search overview</p>
-        </div>
-        <div class="col-sm">
-            Testing some more
-        </div>
-    </div>
-    <div class="row">
         <div class="col-sm search-form-wrapper">
             <form id="searchForm" action="" method="get" class="form-inline">
                 <div class="form-group">
@@ -104,6 +96,7 @@
                     <tr>
                         <th scope="col"></th>
                         <th scope="col">Course</th>
+                        <th scope="col">Type</th>
                         <th scope="col">Code</th>
                         <th scope="col">Units</th>
                     </tr>
@@ -130,8 +123,13 @@
                             if(category == '' || category == val[8].toLowerCase()) {
                                 if(program == '' || program == val[9].toLowerCase()) {
                                     html += '<tr>';
-                                    html += '<td><input type="checkbox" id="enrollCheckbox' + key + '"</td>'
-                                    html += '<td><a href="coursePage.php?courseCode=' + val[6] + '">' + val[0] + '</a></td>';
+                                    if(val[5].toLowerCase() == 'exam'){
+                                        html += '<td><input class="checkbox-exam" type="checkbox" id="enrollCheckbox' + key + '"</td>' 
+                                    } else {
+                                        html += '<td><input type="checkbox" id="enrollCheckbox' + key + '"</td>'
+                                    }
+                                    html += '<td><a class="table-title" href="coursePage.php?courseCode=' + val[6] + '">' + val[0] + '</a><span class="table-period"> ' + val[11] + '</span></td>';
+                                    html += '<td>' + val[5] + '</td>';
                                     html += '<td>' + val[6] + '</td>';
                                     html += '<td>' + val[7] + '</td>';
                                     html += '</tr>';
