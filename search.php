@@ -32,7 +32,7 @@
 
                 </tbody>
             </table>
-            <button type="button" id="enrollSubmit" onclick="enroll()" class="btn btn-primary">Enroll</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#enrollModal">Enroll</button>
         </div>
     </div>
     <?php
@@ -84,30 +84,32 @@
             // course codes for subscribed courses are saved in the session storage
             // to refresh/ clear the enrolled courses, or close the tab
 
-            // confirm placeholder
-            var conf = confirm("Are you sure you wish to enroll in the course(s)?");
-            if(conf) {
-                var tableRows = document.getElementById('tableBody').children;
-                for(var i = 0; i < tableRows.length; i++) {
-                    var row = tableRows[i];
-                    if(row.children[0].children[0].checked) {
-                        var courseArray = JSON.parse(window.sessionStorage.getItem("courseArray"));
-                        var duplicate = false;
-                        for(j in courseArray) {
-                            if(courseArray[j] == row.children[2].innerHTML) {
-                                duplicate = true;
-                            }
+            var tableRows = document.getElementById('tableBody').children;
+            var checkedCourses = 0;
+            for(var i = 0; i < tableRows.length; i++) {
+                var row = tableRows[i];
+                if(row.children[0].children[0].checked) {
+                    var courseArray = JSON.parse(window.sessionStorage.getItem("courseArray"));
+                    var duplicate = false;
+                    for(j in courseArray) {
+                        if(courseArray[j] == row.children[2].innerHTML) {
+                            duplicate = true;
                         }
-                        if(!duplicate) {
-                            courseArray.push(row.children[2].innerHTML);
-                        }
-                        window.sessionStorage.setItem("courseArray", JSON.stringify(courseArray));
                     }
-                    tableRows[i].children[0].children[0].checked = false;
+                    if(!duplicate) {
+                        courseArray.push(row.children[2].innerHTML);
+                        checkedCourses++;
+                    }
+                    window.sessionStorage.setItem("courseArray", JSON.stringify(courseArray));
                 }
+                tableRows[i].children[0].children[0].checked = false;
             }
+            $('#successMessage').html("Enrolled successfully in " + checkedCourses + " course(s)!")
+            $('#successModal').modal('show');
         }
     </script>
+
+    
 
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
     Launch demo modal

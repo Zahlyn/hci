@@ -13,7 +13,7 @@
         <div class="col-sm">
             <div id="indepthInfo">
                 <h3> Next step, admission reqs and stuff </h3>
-                <button type="button" id="enrollSubmit" onclick="enroll(false)" class="btn btn-primary">Enroll</button>
+                <button type="button" id="enrollButton" class="btn btn-primary" data-toggle="modal" data-target="#enrollSingleModal">Enroll</button>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -32,6 +32,8 @@
         }
     ?>
     <script>
+        var alreadyEnrolled = false;
+
         function loadJson(searchQuery, category, program) {
             $(function(){
                 var url = 'https://script.google.com/macros/s/AKfycbx5zKAL58XAs8GAWrIP0XHQsIbmSusaYtWDS6Y8-u9kB_09h7Y/exec';
@@ -63,43 +65,41 @@
             var searchQuery = "<?php echo $searchQuery; ?>".toUpperCase();
             for(j in courseArray) {
                 if(courseArray[j] == searchQuery) {
-                    $('#enrollSubmit').html("Unenroll");
-                    $('#enrollSubmit').attr("onclick","enroll(true)");
+                    $('#enrollButton').html("Unenroll");
+                    $('#enrollButton').attr("data-target", "#unenrollSingleModal");
+                    alreadyEnrolled = true;
                 }
             }
             window.sessionStorage.setItem("courseArray", JSON.stringify(courseArray));
         }
 
-        function enroll(alreadyEnrolled) {
+        function enroll() {
             var searchQuery = "<?php echo $searchQuery; ?>".toUpperCase();
             if(alreadyEnrolled) { // unenroll
-                var conf = confirm("Are you sure you wish to unenroll from this course?");
-                if(conf) {
-                    var courseArray = JSON.parse(window.sessionStorage.getItem("courseArray"));
-                    for(j in courseArray) {
-                        if(courseArray[j] == searchQuery) {
-                            courseArray.splice(j,1);
-                        }
+                var courseArray = JSON.parse(window.sessionStorage.getItem("courseArray"));
+                for(j in courseArray) {
+                    if(courseArray[j] == searchQuery) {
+                        courseArray.splice(j,1);
                     }
-                    window.sessionStorage.setItem("courseArray", JSON.stringify(courseArray));
-                    location.reload();
                 }
+                window.sessionStorage.setItem("courseArray", JSON.stringify(courseArray));
+                $('#successMessage').html("Unenrolled successfully from this course!")
+                $('#successModal').modal('show');
+                
             } else { // enroll
-                var conf = confirm("Are you sure you wish to enroll in this course?");
-                if(conf) {
-                    var courseArray = JSON.parse(window.sessionStorage.getItem("courseArray"));
-                    var duplicate = false;
-                    for(j in courseArray) {
-                        if(courseArray[j] == searchQuery) {
-                            duplicate = true;
-                        }
+                var courseArray = JSON.parse(window.sessionStorage.getItem("courseArray"));
+                var duplicate = false;
+                for(j in courseArray) {
+                    if(courseArray[j] == searchQuery) {
+                        duplicate = true;
                     }
-                    if(!duplicate) {
-                        courseArray.push(searchQuery);
-                    }
-                    window.sessionStorage.setItem("courseArray", JSON.stringify(courseArray));
-                    location.reload();
                 }
+                if(!duplicate) {
+                    courseArray.push(searchQuery);
+                }
+                window.sessionStorage.setItem("courseArray", JSON.stringify(courseArray));
+                $('#successMessage').html("Enrolled successfully in this course!")
+                $('#successModal').modal('show'); 
             }
         }
 
