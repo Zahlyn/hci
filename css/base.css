@@ -107,7 +107,7 @@ a.logotype img {
         border-right: none; }
 
 .academic-requirements.academic-requirements-home {
-  background: #ECEDEF;
+  background: #F9F9F9;
   border-radius: 4px;
   padding: 30px;
   margin: 0 50px; }
@@ -173,5 +173,71 @@ a.logotype img {
   .search-hack input[type='submit'] {
     float: right;
     margin: 5px; }
+
+.collapsable-categories-wrapper {
+  position: relative; }
+
+.collapsable-categories {
+  border: none;
+  background: #F9F9F9;
+  border-radius: 4px;
+  margin: -37px 0 8px; }
+  .collapsable-categories ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    .collapsable-categories ul li {
+      list-style: none; }
+  .collapsable-categories .container-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+  .collapsable-categories input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0; }
+  .collapsable-categories .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #D1D2D7;
+    border-radius: 2px; }
+  .collapsable-categories .container-checkbox:hover input ~ .checkmark {
+    background-color: #B0B2BA; }
+  .collapsable-categories .container-checkbox input:checked ~ .checkmark {
+    background-color: #014189; }
+  .collapsable-categories .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none; }
+  .collapsable-categories .container-checkbox input:checked ~ .checkmark:after {
+    display: block; }
+  .collapsable-categories .container-checkbox .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  .collapsable-categories-link {
+    display: inline-block;
+    margin: 8px 0; }
+
+button.btn-search-enroll {
+  float: right;
+  margin: 8px 0; }
 
 /*# sourceMappingURL=base.css.map */

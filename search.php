@@ -48,14 +48,55 @@
                     <input type="hidden" id="queryHidden" name="query" value="<?php echo $searchQuery; ?>">
                 </div>
             </form>
-            <br>
-            <br>
-            <br>
-            <br>
-            <button onclick="addCategory('Music, art and design')" type="button" class="btn btn-primary">Music, art and design</button> 
-            <br> <br>
         </div>
     </div>
+
+<!-- CATEGORY COLLAPSABLE -->
+    <div class="row">
+        <div class="col-sm collapsable-categories-wrapper">
+            <a class="collapsable-categories-link" data-toggle="collapse" href="#collapseCategories" role="button" aria-expanded="false" aria-controls="collapseCategories">
+                <i class="fas fa-plus"></i> Add category
+            </a>
+            <div class="collapse" id="collapseCategories">
+                <div class="card card-body collapsable-categories">
+                    <div class="row">
+                        <div class="col-sm">
+                            <ul>
+                                <li class="category-item" onclick="addCategory('Music, art and design')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Behaviour and society</label></li>
+                                <li class="category-item" onclick="addCategory('Music, art and design')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Durability and Environment</label></li>
+                                <li class="category-item" onclick="addCategory('Music, art and design')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Law and government</label></li>
+                                <li class="category-item" onclick="addCategory('Music, art and design')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Religion and philosophy</label></li>
+                            </ul> 
+                        </div>
+                        <div class="col-sm">
+                            <ul>
+                                <li class="category-item" onclick="addCategory('Music, art and design')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Communication and education</label></li>
+                                <li class="category-item" onclick="addCategory('Music, art and design')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Economics and companies</label></li>
+                                <li class="category-item" onclick="addCategory('Music, art and design')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Music, art and design</label></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm">
+                            <ul>
+                                <li class="category-item" onclick="addCategory('Music, art and design')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Culture, and history</label></li>
+                                <li class="category-item" onclick="addCategory('Music, art and design')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Health Languages</label></li>
+                                <li class="category-item" onclick="addCategory('Music, art and design')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Music, art and design</label></li>
+                                <li class="category-item" onclick="addCategory('Music, art and design')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Natural and computer sciences</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm collapsable-categories-nav">
+                            <a data-toggle="collapse" href="#collapseCategories" role="button" aria-expanded="false" aria-controls="collapseCategories">Close</a>
+                        </div>
+                    </div>
+                    <!-- <button onclick="addCategory('Music, art and design')" type="button" class="btn btn-primary">Music, art and design</button> -->
+                </div>
+            </div>
+            <button type="button" class="btn btn-tertiary btn-search-enroll" data-toggle="modal" data-target="#enrollModal">Enroll</button> 
+        </div>
+    </div>
+
+<!-- TABLE -->
     <div class="row">
         <div class="col-sm">
             <table class="table">
@@ -71,7 +112,6 @@
 
                 </tbody>
             </table>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#enrollModal">Enroll</button>
         </div>
     </div>
     
