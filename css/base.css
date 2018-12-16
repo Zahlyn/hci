@@ -31,6 +31,24 @@
       color: white; }
 
 body {
-  color: #3B3E4C; }
+  color: #3B3E4C;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px; }
+
+a.logotype img {
+  width: 200px;
+  height: auto; }
+
+.front-page {
+  text-align: center; }
+  .front-page .search-field {
+    max-width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 15px;
+    box-shadow: 2px 2px 2px rgba(44, 47, 75, 0.15);
+    height: 49px; }
+  .front-page .btn {
+    min-width: 120px; }
 
 /*# sourceMappingURL=base.css.map */

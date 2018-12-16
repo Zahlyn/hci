@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
     <?php define( 'SCRIPT_ROOT', 'http://localhost/hci' ); ?>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <?php echo '<link rel="stylesheet" type="text/css" href="'.SCRIPT_ROOT.'/css/base.css">'; ?>
@@ -16,4 +17,4 @@
 <body>
     <div class="wrapper">
         <div class="container">
-        <a href="index.php"><h1>youSis</h1></a>
+        <a href="index.php" class="logotype"><img src="<?php echo SCRIPT_ROOT ?>/images/logotype.png" alt=""></a>
