@@ -19,7 +19,7 @@
 
                 </tbody>
             </table>
-            <button type="button" id="enrollSubmit" onclick="unenroll()" class="btn btn-primary">Unenroll</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#unenrollModal">Unenroll</button>
         </div>
     </div>        
     <script>
@@ -47,27 +47,24 @@
 
         $(document).ready(loadCourses);
 
-        function unenroll() {
-            var conf = confirm("Are you sure you wish to unenroll from the course(s)?");
-            if(conf) {
-                var courseArray = JSON.parse(window.sessionStorage.getItem("courseArray"));
-                var tableRows = document.getElementById('tableBody').children;
-                var checkedCourses = 0;
-                for(var i = 0; i < tableRows.length; i++) {
-                    var row = tableRows[i];
-                    if(row.children[0].children[0].checked) {
-                        for(j in courseArray) {
-                            if(courseArray[j] == row.children[2].innerHTML) {
-                                courseArray.splice(j,1);
-                                checkedCourses++;
-                            }
+        function enroll() {
+            var courseArray = JSON.parse(window.sessionStorage.getItem("courseArray"));
+            var tableRows = document.getElementById('tableBody').children;
+            var checkedCourses = 0;
+            for(var i = 0; i < tableRows.length; i++) {
+                var row = tableRows[i];
+                if(row.children[0].children[0].checked) {
+                    for(j in courseArray) {
+                        if(courseArray[j] == row.children[2].innerHTML) {
+                            courseArray.splice(j,1);
+                            checkedCourses++;
                         }
                     }
                 }
-                window.sessionStorage.setItem("courseArray", JSON.stringify(courseArray));
-                alert("Unenrolled successfully from " + checkedCourses + " course(s)!");
-                location.reload();
             }
+            window.sessionStorage.setItem("courseArray", JSON.stringify(courseArray));
+            $('#successMessage').html("Unenrolled successfully from " + checkedCourses + " course(s)!")
+            $('#successModal').modal('show');
         }
     </script>
 <?php include 'partials/html-footer.php'; ?>
