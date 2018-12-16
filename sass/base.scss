@@ -1,0 +1,8 @@
+@import 'colors';
+
+.btn {
+    border: none;
+    &-primary {
+        background: $primary-button;
+    }
+}
