@@ -48,20 +48,23 @@
         $(document).ready(loadCourses);
 
         function unenroll() {
-            var courseArray = JSON.parse(window.sessionStorage.getItem("courseArray"));
-            var tableRows = document.getElementById('tableBody').children;
-            for(var i = 0; i < tableRows.length; i++) {
-                var row = tableRows[i];
-                if(row.children[0].children[0].checked) {
-                    for(j in courseArray) {
-                        if(courseArray[j] == row.children[2].innerHTML) {
-                            courseArray.splice(j,1);
+            var conf = confirm("Are you sure you wish to unenroll from the course(s)?");
+            if(conf) {
+                var courseArray = JSON.parse(window.sessionStorage.getItem("courseArray"));
+                var tableRows = document.getElementById('tableBody').children;
+                for(var i = 0; i < tableRows.length; i++) {
+                    var row = tableRows[i];
+                    if(row.children[0].children[0].checked) {
+                        for(j in courseArray) {
+                            if(courseArray[j] == row.children[2].innerHTML) {
+                                courseArray.splice(j,1);
+                            }
                         }
                     }
                 }
+                window.sessionStorage.setItem("courseArray", JSON.stringify(courseArray));
+                location.reload();
             }
-            window.sessionStorage.setItem("courseArray", JSON.stringify(courseArray));
-            location.reload();
         }
     </script>
 <?php include 'partials/html-footer.php'; ?>

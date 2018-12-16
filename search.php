@@ -89,25 +89,29 @@
 
         function enroll() {
             // course codes for subscribed courses are saved in the session storage
-            // to refresh/ clear the enrolled courses, visit index.php or close the tab
+            // to refresh/ clear the enrolled courses, or close the tab
 
-            var tableRows = document.getElementById('tableBody').children;
-            for(var i = 0; i < tableRows.length; i++) {
-                var row = tableRows[i];
-                if(row.children[0].children[0].checked) {
-                    var courseArray = JSON.parse(window.sessionStorage.getItem("courseArray"));
-                    var duplicate = false;
-                    for(j in courseArray) {
-                        if(courseArray[j] == row.children[2].innerHTML) {
-                            duplicate = true;
+            // confirm placeholder
+            var conf = confirm("Are you sure you wish to enroll in the course(s)?");
+            if(conf) {
+                var tableRows = document.getElementById('tableBody').children;
+                for(var i = 0; i < tableRows.length; i++) {
+                    var row = tableRows[i];
+                    if(row.children[0].children[0].checked) {
+                        var courseArray = JSON.parse(window.sessionStorage.getItem("courseArray"));
+                        var duplicate = false;
+                        for(j in courseArray) {
+                            if(courseArray[j] == row.children[2].innerHTML) {
+                                duplicate = true;
+                            }
                         }
+                        if(!duplicate) {
+                            courseArray.push(row.children[2].innerHTML);
+                        }
+                        window.sessionStorage.setItem("courseArray", JSON.stringify(courseArray));
                     }
-                    if(!duplicate) {
-                        courseArray.push(row.children[2].innerHTML);
-                    }
-                    window.sessionStorage.setItem("courseArray", JSON.stringify(courseArray));
+                    tableRows[i].children[0].children[0].checked = false;
                 }
-                tableRows[i].children[0].children[0].checked = false;
             }
         }
     </script>
