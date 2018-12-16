@@ -16,8 +16,10 @@
     </div>
     <script>
         function init() {
-            var courses = [];
-            window.sessionStorage.setItem("courseArray", JSON.stringify(courses));
+            if(window.sessionStorage.getItem("courseArray") === null) {
+                var courses = [];
+                window.sessionStorage.setItem("courseArray", JSON.stringify(courses));
+            }
         }
 
         $(document).ready(init);
