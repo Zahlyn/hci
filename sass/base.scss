@@ -96,6 +96,8 @@ a.logotype {
     box-shadow: $box-shadow;
     height: 49px;
     width: 100%;
+    float: left;
+
     .tags-in-search {
         display: none;
     }
@@ -151,14 +153,21 @@ a.logotype {
             }
         }
     }
-    input {
+    input[type="text"] {
         display: inline;
         float: left;
         border: none;
         background: none;
+        padding-top: 13px;
+
         &:focus {
             box-shadow: none;
             border: none;
         }
+    }
+
+    input[type='submit']{
+        float: right;
+        margin: 5px;
     }
 }

@@ -30,8 +30,8 @@
                     <div class="search-hack">
                         <div id="searchTags" class="tags-in-search"></div>
                         <input type="text" id="searchBar" name="query" placeholder="Search course..." class="form-control">
+                        <input type="submit" id="searchSubmit" value="Search" class="btn btn-primary">
                     </div>
-                    <input type="submit" id="searchSubmit" value="Search" class="btn btn-primary">
                 </div>
             </form>
         </div>
@@ -48,7 +48,10 @@
                     <input type="hidden" id="queryHidden" name="query" value="<?php echo $searchQuery; ?>">
                 </div>
             </form>
-            <p>Example category button</p>
+            <br>
+            <br>
+            <br>
+            <br>
             <button onclick="addCategory('Music, art and design')" type="button" class="btn btn-primary">Music, art and design</button> 
             <br> <br>
         </div>
