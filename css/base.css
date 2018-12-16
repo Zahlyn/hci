@@ -76,6 +76,9 @@ a {
     text-decoration: none;
     color: #ADC2D9; }
 
+.im-hiding-this-in-css {
+  display: none; }
+
 a.logotype img {
   width: 200px;
   height: auto; }
@@ -108,5 +111,62 @@ a.logotype img {
   border-radius: 4px;
   padding: 30px;
   margin: 0 50px; }
+
+.search-form-wrapper .form-group {
+  width: 100%; }
+
+.search-hack {
+  border: 1px solid #ced4da;
+  box-shadow: 2px 2px 2px rgba(44, 47, 75, 0.15);
+  height: 49px;
+  width: 100%; }
+  .search-hack .tags-in-search {
+    display: none; }
+  .search-hack .tags-in-search.category {
+    display: inline;
+    float: left;
+    font-size: 16px;
+    background-color: #EE994F;
+    height: 37px;
+    padding: 7px 10px 7px 15px;
+    margin: 5px;
+    border-radius: 21px;
+    color: white;
+    font-size: 14px;
+    font-weight: 700; }
+    .search-hack .tags-in-search.category:hover {
+      background: #BC793E; }
+    .search-hack .tags-in-search.category p {
+      display: inline;
+      float: left; }
+      .search-hack .tags-in-search.category p i {
+        margin: 5px; }
+  .search-hack .tags-in-search.program {
+    display: inline;
+    float: left;
+    font-size: 16px;
+    background-color: #5783B1;
+    height: 37px;
+    padding: 7px 10px 7px 15px;
+    margin: 5px;
+    border-radius: 21px;
+    color: white;
+    font-size: 14px;
+    font-weight: 700; }
+    .search-hack .tags-in-search.program:hover {
+      background: #BC793E; }
+    .search-hack .tags-in-search.program p {
+      display: inline;
+      float: left; }
+      .search-hack .tags-in-search.program p i {
+        margin: 5px; }
+  .search-hack input {
+    display: inline;
+    float: left;
+    border: none;
+    background: none; }
+    .search-hack input:focus {
+      box-shadow: none;
+      border: none; }
 
 /*# sourceMappingURL=base.css.map */

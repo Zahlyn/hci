@@ -26,6 +26,10 @@ a {
     }
 }
 
+.im-hiding-this-in-css{
+    display: none;
+}
+
 // INDEX
 a.logotype {
 
@@ -78,5 +82,83 @@ a.logotype {
         border-radius: $border-radius;
         padding: 30px;
         margin: 0 50px;
+    }
+}
+
+.search-form-wrapper {
+    .form-group {
+        width: 100%;
+    }
+}
+
+.search-hack {
+    border: 1px solid #ced4da;
+    box-shadow: $box-shadow;
+    height: 49px;
+    width: 100%;
+    .tags-in-search {
+        display: none;
+    }
+    .tags-in-search.category {
+        display: inline;
+        float: left;
+        font-size: 16px;
+        background-color: $primary-button;
+        height: 37px;
+        padding: 7px 10px 7px 15px;
+        margin: 5px;
+        border-radius: 21px;
+        color: white;
+        font-size: 14px;
+        font-weight: 700;
+
+        &:hover {
+            background: $primary-button-hover;
+        }
+
+        p {
+            display: inline;
+            float: left;
+            
+            i {
+                margin: 5px;
+            }
+        }
+    }
+    .tags-in-search.program {
+        display: inline;
+        float: left;
+        font-size: 16px;
+        background-color: $tertiary-button;
+        height: 37px;
+        padding: 7px 10px 7px 15px;
+        margin: 5px;
+        border-radius: 21px;
+        color: white;
+        font-size: 14px;
+        font-weight: 700;
+
+        &:hover {
+            background: $primary-button-hover;
+        }
+
+        p {
+            display: inline;
+            float: left;
+            
+            i {
+                margin: 5px;
+            }
+        }
+    }
+    input {
+        display: inline;
+        float: left;
+        border: none;
+        background: none;
+        &:focus {
+            box-shadow: none;
+            border: none;
+        }
     }
 }

@@ -22,18 +22,21 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm">
+        <div class="col-sm search-form-wrapper">
             <form id="searchForm" action="" method="get" class="form-inline">
                 <div class="form-group">
                     <input type="hidden" name="program" value="<?php echo $program; ?>">
                     <input type="hidden" name="category" value="<?php echo $category; ?>">
-                    <input type="text" id="searchBar" name="query" placeholder="Search course..." class="form-control">
+                    <div class="search-hack">
+                        <div id="searchTags" class="tags-in-search"></div>
+                        <input type="text" id="searchBar" name="query" placeholder="Search course..." class="form-control">
+                    </div>
                     <input type="submit" id="searchSubmit" value="Search" class="btn btn-primary">
                 </div>
             </form>
         </div>
-        <div id="tags" class="col-sm">
-                <h3> tags: </h3>
+        <div id="tags" class="col-sm im-hiding-this-in-css">
+                
         </div>
     </div>
     <div class="row">
@@ -109,17 +112,21 @@
         function removeTag(type) {
             $('#'+type+'Hidden').attr("value", '');
             $('#hiddenForm').submit();
+            $("#searchTags").removeClass("category");
+            $("#searchTags").removeClass("program");
         }
         
         function showProgramCategoryTags(program, category) {
-            var html = $('#tags').html();
+            var html = $('#searchTags').html();
             if(program != ''){
-                html += "<p onclick=\"removeTag('program')\">Program: " + program + "</p>";
+                html += "<p onclick=\"removeTag('program')\">" + program + "<i class=\"fas fa-times-circle\"></i></p>";
+                $("#searchTags").addClass("program");
             }
             if(category != ''){
-                html += "<p onclick=\"removeTag('category')\">Category: " + category + "</p>";
+                html += "<p onclick=\"removeTag('category')\">" + category + "<i class=\"fas fa-times-circle\"></i></p>";
+                $("#searchTags").addClass("category");
             }
-            $('#tags').html(html);
+            $('#searchTags').html(html);
         }
 
         function init() {
