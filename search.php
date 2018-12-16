@@ -190,12 +190,12 @@
                     var courseArray = JSON.parse(window.sessionStorage.getItem("courseArray"));
                     var duplicate = false;
                     for(j in courseArray) {
-                        if(courseArray[j] == row.children[2].innerHTML) {
+                        if(courseArray[j] == row.children[3].innerHTML) {
                             duplicate = true;
                         }
                     }
                     if(!duplicate) {
-                        courseArray.push(row.children[2].innerHTML);
+                        courseArray.push(row.children[3].innerHTML);
                         checkedCourses++;
                     }
                     window.sessionStorage.setItem("courseArray", JSON.stringify(courseArray));
