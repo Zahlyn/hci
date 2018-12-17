@@ -72,7 +72,7 @@
                                 <li class="category-item" onclick="addCategory('Music, art and design')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Culture, and history</label></li>
                                 <li class="category-item" onclick="addCategory('Music, art and design')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Health Languages</label></li>
                                 <li class="category-item" onclick="addCategory('Music, art and design')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Music, art and design</label></li>
-                                <li class="category-item" onclick="addCategory('Music, art and design')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Natural and computer sciences</label></li>
+                                <li class="category-item" onclick="addCategory('Natural and computer sciences')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Natural and computer sciences</label></li>
                             </ul>
                         </div>
                     </div>
