@@ -24,7 +24,7 @@
             <div class="container">            
                 <div class="row">
                     <div class="col-sm">
-                    <a href="index.php" class="logotype"><img src="<?php echo SCRIPT_ROOT ?>/images/logotype.png" alt=""></a>
+                        <a href="index.php" class="logotype"><img src="<?php echo SCRIPT_ROOT ?>/images/logotype.png" alt=""></a>
                     </div>
                     <div class="col-sm">
                         <ul>
@@ -38,6 +38,12 @@
                     <!-- <form action="myCourses.php">
                         <input type="submit" value="My Courses" class="">
                     </form> -->
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                            <p onclick="window.history.back()">Previous page</p>
                     </div>
                 </div>
             </div>

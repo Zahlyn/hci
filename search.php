@@ -15,7 +15,7 @@
     ?>
      <div class="row">
         <div class="col-sm academic-requirements-top">
-            <a href="search.php?program=Media"><i class="fas fa-graduation-cap"></i> See by academic requirement</a>
+            <p onclick="addProgram('Media')"><i class="fas fa-graduation-cap"></i> See by academic requirement</p>
         </div>
     </div>
     <div class="row">
@@ -225,12 +225,12 @@
                     var courseArray = JSON.parse(window.sessionStorage.getItem("courseArray"));
                     var duplicate = false;
                     for(j in courseArray) {
-                        if(courseArray[j] == row.children[3].innerHTML) {
+                        if(courseArray[j] == row.children[2].innerHTML) {
                             duplicate = true;
                         }
                     }
                     if(!duplicate) {
-                        courseArray.push(row.children[3].innerHTML);
+                        courseArray.push(row.children[2].innerHTML);
                         checkedCourses++;
                     }
                     window.sessionStorage.setItem("courseArray", JSON.stringify(courseArray));
@@ -243,6 +243,11 @@
 
         function addCategory(cat) {
             $('#categoryHidden').attr("value", cat);
+            $('#hiddenForm').submit();
+        }
+
+        function addProgram(pro) {
+            $('#programHidden').attr("value", pro);
             $('#hiddenForm').submit();
         }
     </script>
