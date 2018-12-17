@@ -96,9 +96,9 @@
                     <tr>
                         <th scope="col"></th>
                         <th scope="col">Course</th>
-                        <th scope="col">Type</th>
                         <th scope="col">Code</th>
                         <th scope="col">Units</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody id="tableBody">
@@ -129,14 +129,34 @@
                                         html += '<tr class="table-item-course">';
                                     }
                                     if(courseArrayEnrolled.indexOf(val[6]) != -1){
-                                        html += '<td><input disabled type="checkbox" id="enrollCheckbox' + key + '"</td>' 
+                                        html += '<td><input disabled data-toggle="tooltip" data-placement="right" title="Enrolled already" type="checkbox" id="enrollCheckbox' + key + '"</td>' 
                                     } else {
                                         html += '<td><input type="checkbox" id="enrollCheckbox' + key + '"</td>'
                                     }
-                                    html += '<td><a class="table-title" href="coursePage.php?courseCode=' + val[6] + '">' + val[0] + '</a><span class="table-period"> ' + val[11] + '</span><a class="table-title-see-more" href="coursePage.php?courseCode=' + val[6] + '">Read more</a></td>';
-                                    html += '<td>' + val[5] + '</td>';
+                                    if(courseArrayEnrolled.indexOf(val[6]) != -1){
+                                        html += '<td><i class="fas fa-check table-title-enrolled-check"></i><a class="table-title" href="coursePage.php?courseCode=' + val[6] + '">' + val[0] + '</a><span class="table-period">' + val[5] + ' - ' + val[11] + '</span><a class="table-title-see-more" href="coursePage.php?courseCode=' + val[6] + '">Read more</a></td>';
+                                    } else {
+                                        html += '<td><a class="table-title" href="coursePage.php?courseCode=' + val[6] + '">' + val[0] + '</a><span class="table-period"> ' + val[5] + ' - ' + val[11] + '</span><a class="table-title-see-more" href="coursePage.php?courseCode=' + val[6] + '">Read more</a></td>';
+                                    }
                                     html += '<td>' + val[6] + '</td>';
                                     html += '<td>' + val[7] + '</td>';
+                                    html += '<td>';
+                                    if(val[12] == true){
+                                        html += '<i class="fas fa-book icon-true table-icon-list" data-toggle="tooltip" data-placement="right" title="Elective"></i>';
+                                    } else {
+                                        html += '<i class="fas fa-book icon-false table-icon-list" data-toggle="tooltip" data-placement="right" title="Not elective"></i>';
+                                    }
+                                    if(val[13] == true){
+                                        html += '<i class="fas fa-arrows-alt-h icon-true table-icon-list" data-toggle="tooltip" data-placement="right" title="Exchange possible"></i>';
+                                    } else {
+                                        html += '<i class="fas fa-arrows-alt-h icon-false table-icon-list" data-toggle="tooltip" data-placement="right" title="Exchange not possible"></i>';
+                                    }
+                                    if(val[14] == true){
+                                        html += '<i class="fas fa-globe-africa icon-true table-icon-list" data-toggle="tooltip" data-placement="right" title="Study abroad possible"></i>';
+                                    } else {
+                                        html += '<i class="fas fa-globe-africa icon-false table-icon-list" data-toggle="tooltip" data-placement="right" title="Study abroad not possible"></i>';
+                                    }
+                                    html += '</td>';
                                     html += '</tr>';
                                 }
                             }

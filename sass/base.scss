@@ -207,6 +207,7 @@ a.logotype {
 button.btn-search-enroll {
     float: right;
     margin: 8px 0;
+    min-width: 120px;
 }
 
 
@@ -238,6 +239,10 @@ table {
             float: right;
             font-size: $font-size * 0.875;
         }
+        &-enrolled-check {
+            color: $green-button;
+            margin-right: 8px;
+        }
     }
 
     .table-item-exam input {
@@ -248,5 +253,22 @@ table {
         color: $icon-color-hover;
         font-size: $font-size * 0.875;
         margin-left: 10px;
+    }
+}
+
+.icon-true {
+    color: $primary-brand;
+}
+
+.icon-false {
+    color: $inactive;
+}
+
+i.table-icon-list {
+    margin-right: 8px;
+    float: right;
+
+    &:first-child{
+        margin-right: 0;
     }
 }

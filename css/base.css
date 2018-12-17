@@ -245,7 +245,8 @@ a.logotype img {
 
 button.btn-search-enroll {
   float: right;
-  margin: 8px 0; }
+  margin: 8px 0;
+  min-width: 120px; }
 
 table thead {
   border: none;
@@ -265,11 +266,26 @@ table .table-title {
   table .table-title-see-more {
     float: right;
     font-size: 13.125px; }
+  table .table-title-enrolled-check {
+    color: #84C788;
+    margin-right: 8px; }
 table .table-item-exam input {
   margin-left: 15px; }
 table .table-period {
   color: #B0B2BA;
   font-size: 13.125px;
   margin-left: 10px; }
+
+.icon-true {
+  color: #014189; }
+
+.icon-false {
+  color: #DFE0E3; }
+
+i.table-icon-list {
+  margin-right: 8px;
+  float: right; }
+  i.table-icon-list:first-child {
+    margin-right: 0; }
 
 /*# sourceMappingURL=base.css.map */
