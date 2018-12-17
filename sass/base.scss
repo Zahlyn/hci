@@ -56,7 +56,7 @@ a.logotype {
 }
 
 .academic-requirements-top {
-    a {
+    a, p {
         float: right;
         margin-bottom: 8px;
     }
@@ -182,6 +182,7 @@ a.logotype {
         border: none;
         background: none;
         padding-top: 13px;
+        width: 80%;
 
         &:focus {
             box-shadow: none;
@@ -297,4 +298,9 @@ i.table-icon-list {
     &:first-child{
         margin-right: 0;
     }
+}
+
+.link {
+    cursor: pointer;
+    color: $tertiary-button;
 }

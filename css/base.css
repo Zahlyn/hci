@@ -252,7 +252,7 @@ a.logotype img {
   height: auto;
 }
 
-.academic-requirements-top a {
+.academic-requirements-top a, .academic-requirements-top p {
   float: right;
   margin-bottom: 8px;
 }
@@ -359,6 +359,7 @@ a.logotype img {
   border: none;
   background: none;
   padding-top: 13px;
+  width: 80%;
 }
 .search-hack input[type=text]:focus {
   box-shadow: none;
@@ -454,6 +455,11 @@ i.table-icon-list {
 }
 i.table-icon-list:first-child {
   margin-right: 0;
+}
+
+.link {
+  cursor: pointer;
+  color: #5783B1;
 }
 
 /*# sourceMappingURL=base.css.map */

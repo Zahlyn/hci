@@ -15,7 +15,7 @@
     ?>
      <div class="row">
         <div class="col-sm academic-requirements-top">
-            <p onclick="addProgram('Media')"><i class="fas fa-graduation-cap"></i> See by academic requirement</p>
+            <p class="link" onclick="addProgram('Media')"><i class="fas fa-graduation-cap"></i> See by academic requirement</p>
         </div>
     </div>
     <div class="row">
