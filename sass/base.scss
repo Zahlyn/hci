@@ -234,9 +234,13 @@ table {
 
     .table-title {
         font-weight: 700;
+        &-see-more {
+            float: right;
+            font-size: $font-size * 0.875;
+        }
     }
 
-    .checkbox-exam {
+    .table-item-exam input {
         margin-left: 15px;
     }
 
