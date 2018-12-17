@@ -41,3 +41,28 @@
         }
     }
 }
+
+.exam {
+    width: 300px;
+    box-shadow: $box-shadow;
+
+    &-section-title {
+        margin-bottom: 15px;
+    }
+    &-title {
+        display: block;
+        border-bottom: 1px solid $icon-color;
+        padding: 20px 15px 15px;
+        background: $background-grey;
+    }
+    span {
+        display: block;
+        font-size: 11px;
+        padding: 5px 15px;
+    }
+    &-view {
+        font-weight: 600;
+        display: block;
+        padding: 0 15px 15px;
+    }
+}

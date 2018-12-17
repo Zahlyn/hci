@@ -13,6 +13,10 @@ body {
     font-size: $font-size;
 }
 
+.wrapper {
+    padding-bottom: 100px;
+}
+
 a {
     text-decoration: none;
     color: $tertiary-button;

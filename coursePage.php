@@ -37,7 +37,9 @@
                             htmlMain += '<h1>' + val[0] + '</h1>';
                             htmlMain += '<span class="coursecode">' + val[6] + ' --- ' + val[11] + '</span>';
                             htmlMain += '<p>' + val[2].replace(/\r\n|\n|\r/g, '<br />') + '</p>';
-                            htmlMain += '<h4>Objectives</h4><p>' + val[3].replace(/\r\n|\n|\r/g, '<br />') + '</p>';
+                            if(val[3] != ''){
+                                htmlMain += '<h4>Objectives</h4><p>' + val[3].replace(/\r\n|\n|\r/g, '<br />') + '</p>';
+                            }
                             
                             if(courseArrayEnrolled.indexOf(val[6]) != -1){
                                 htmlNext += '<div class="next-step"><h5><i class="fas fa-exclamation-circle icon-next-step"></i> Next step</h5><p>Congratulations for successfully enrolling in ' + val[0] + '. Now all you got left to do is the following before the course start:</p><div class="single-steps"><ul><li>Enroll in Blackboard</li><li>Read through required reading for first class</li></ul></div></div>';
@@ -55,6 +57,24 @@
                             if(val[18] != ''){
                                 htmlAside += '<h6>Assessment Method</h6><p>' + val[18].replace(/\r\n|\n|\r/g, '<br />') + '</p>';
                             }
+                        }
+                        if(searchQuery == val[10]) {
+                            htmlMain += '<h5 class="exam-section-title">Examination elements for ' + val[0] + '</h5><div class="exam"><a class="exam-title" href="coursePage.php?courseCode=' + val[6] + '">' + val[0] + '</a><span class="exam-type"> ' + val[5] + ' ';
+                            if(courseArrayEnrolled.indexOf(val[6]) != -1){
+                                htmlMain += '- <b>You are enrolled</b></span>';
+                            } else {
+                                htmlMain += '- <b>You are not enrolled</b></span>';
+                            }
+                            htmlMain += '<a class="exam-view" href="coursePage.php?courseCode=' + val[6] + '">View</a></div>';
+                        }
+                        if(val[10] != '' && searchQuery == val[6]) {
+                            htmlMain += '<h5 class="exam-section-title">This is part of the course: ' + val[0] + '</h5><div class="exam"><a class="exam-title" href="coursePage.php?courseCode=' + val[10] + '">' + val[0] + '</a> <span class="exam-type">Course ';
+                            if(courseArrayEnrolled.indexOf(val[10]) != -1){
+                                htmlMain += '- <b>You are enrolled</b></span>';
+                            } else {
+                                htmlMain += '- <b>You are not enrolled</b></span>';
+                            }
+                            htmlMain += '<a class="exam-view" href="coursePage.php?courseCode=' + val[10] + '">View</a></div>';
                         }
                     })
                     $('#courseInfo').html(htmlMain);
