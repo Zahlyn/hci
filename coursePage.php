@@ -39,10 +39,8 @@
                 var url = 'https://script.google.com/macros/s/AKfycbx5zKAL58XAs8GAWrIP0XHQsIbmSusaYtWDS6Y8-u9kB_09h7Y/exec';
                 $.getJSON(url,function(data){
                     var html = $('#courseInfo').html();
-                    console.log(html)
                     $.each(data, function(key,val){
-                        if(val.length >= 8 && searchQuery == val[6].toUpperCase() ) {
-                            console.log(val[0])
+                        if(val.length >= 8 && searchQuery == val[6].toString().toUpperCase() ) {
                             html += '<h1>' + val[0] + '</h1>';
                             html += '<h3>' + val[6] + '</h3>';
                             html += '<p>' + val[2] + '</p>';
@@ -56,13 +54,13 @@
         }
 
         function loadQuery() {
-            var searchQuery = "<?php echo $searchQuery; ?>".toUpperCase();
+            var searchQuery = "<?php echo $searchQuery; ?>".toString().toUpperCase();
             loadJson(searchQuery, '', '');
         }
         
         function loadEnrollStatus() {
             var courseArray = JSON.parse(window.sessionStorage.getItem("courseArray"));
-            var searchQuery = "<?php echo $searchQuery; ?>".toUpperCase();
+            var searchQuery = "<?php echo $searchQuery; ?>".toString().toUpperCase();
             for(j in courseArray) {
                 if(courseArray[j] == searchQuery) {
                     $('#enrollButton').html("Unenroll");
@@ -74,7 +72,7 @@
         }
 
         function enroll() {
-            var searchQuery = "<?php echo $searchQuery; ?>".toUpperCase();
+            var searchQuery = "<?php echo $searchQuery; ?>".toString().toUpperCase();
             if(alreadyEnrolled) { // unenroll
                 var courseArray = JSON.parse(window.sessionStorage.getItem("courseArray"));
                 for(j in courseArray) {

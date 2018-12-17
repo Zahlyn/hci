@@ -30,7 +30,7 @@
             $.getJSON(url,function(data){
                 $.each(data, function(key,val){
                     for(i in courseArray) {
-                        if(val.length >= 8 && courseArray[i] == val[6].toUpperCase()) {
+                        if(val.length >= 8 && courseArray[i] == val[6].toString().toUpperCase()) {
 
                             html += '<tr>';
                             html += '<td><input type="checkbox" id="unenrollCheckbox' + key + '"</td>'

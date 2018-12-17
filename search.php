@@ -118,7 +118,7 @@
                     $.each(data, function(key,val){
                         if(val.length >= 10 && (searchQuery == val[1].toLowerCase() 
                             || val[0].toLowerCase().search(searchQuery) != -1 
-                            || searchQuery == val[6].toLowerCase() 
+                            || searchQuery == val[6].toString().toLowerCase() 
                             || searchQuery == '')) {
                             if(category == '' || category == val[8].toLowerCase()) {
                                 if(program == '' || program == val[9].toLowerCase()) {
@@ -143,9 +143,9 @@
         }
 
         function loadQuery() {
-            var searchQuery = "<?php echo $searchQuery; ?>".toLowerCase();
-            var category = "<?php echo $category; ?>".toLowerCase();
-            var program = "<?php echo $program; ?>".toLowerCase();
+            var searchQuery = "<?php echo $searchQuery; ?>".toString().toLowerCase();
+            var category = "<?php echo $category; ?>".toString().toLowerCase();
+            var program = "<?php echo $program; ?>".toString().toLowerCase();
             loadJson(searchQuery, category, program);
             showProgramCategoryTags(program, category);
         }
