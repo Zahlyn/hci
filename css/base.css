@@ -186,9 +186,23 @@ a {
 .im-hiding-this-in-css {
   display: none; }
 
+.front-page h2 {
+  margin-bottom: 30px;
+  font-weight: 200; }
+.front-page .category-list {
+  margin-top: 30px; }
+.front-page .academic-requirements-top {
+  width: 500px;
+  margin-right: auto;
+  margin-left: auto; }
+
 a.logotype img {
   width: 200px;
   height: auto; }
+
+.academic-requirements-top a {
+  float: right;
+  margin-bottom: 8px; }
 
 .front-page {
   text-align: center; }

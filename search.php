@@ -13,6 +13,11 @@
             $program = $_GET['program'];
         }
     ?>
+     <div class="row">
+        <div class="col-sm academic-requirements-top">
+            <a href="search.php?program=Media"><i class="fas fa-graduation-cap"></i> See by academic requirement</a>
+        </div>
+    </div>
     <div class="row">
         <div class="col-sm search-form-wrapper">
             <form id="searchForm" action="" method="get" class="form-inline">

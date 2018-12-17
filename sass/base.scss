@@ -33,11 +33,32 @@ a {
 }
 
 // INDEX
+.front-page {
+    h2 {
+        margin-bottom: 30px;
+        font-weight: 200;
+    }
+    .category-list {
+        margin-top: 30px;
+    }
+    .academic-requirements-top {
+        width: 500px;
+        margin-right: auto; margin-left: auto;
+    }
+}
+
 a.logotype {
 
     img {
         width: 200px;
         height: auto;
+    }
+}
+
+.academic-requirements-top {
+    a {
+        float: right;
+        margin-bottom: 8px;
     }
 }
 
