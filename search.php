@@ -113,6 +113,10 @@
     </div>
     
     <script>
+    $("body").tooltip({
+    selector: '[data-toggle="tooltip"]'
+});
+
         function loadJson(searchQuery, category, program) {
             $(function(){
                 var url = 'https://script.google.com/macros/s/AKfycbx5zKAL58XAs8GAWrIP0XHQsIbmSusaYtWDS6Y8-u9kB_09h7Y/exec';
@@ -170,6 +174,8 @@
                 })
             })
         }
+
+        
 
         function loadQuery() {
             var searchQuery = "<?php echo $searchQuery; ?>".toString().toLowerCase();

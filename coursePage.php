@@ -35,7 +35,7 @@
                     $.each(data, function(key,val){
                         if(val.length >= 8 && searchQuery == val[6].toString().toUpperCase() ) {
                             htmlMain += '<h1>' + val[0] + '</h1>';
-                            htmlMain += '<span class="coursecode">' + val[6] + '</span>';
+                            htmlMain += '<span class="coursecode">' + val[6] + ' --- ' + val[11] + '</span>';
                             htmlMain += '<p>' + val[2].replace(/\r\n|\n|\r/g, '<br />') + '</p>';
                             htmlMain += '<h4>Objectives</h4><p>' + val[3].replace(/\r\n|\n|\r/g, '<br />') + '</p>';
                             
