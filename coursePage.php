@@ -1,36 +1,26 @@
 <?php include 'partials/html-head.php'; ?>
-    <div class="row">
-        <div class="col-sm">
-            <p>Now time for testing. Course page</p>
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-sm">
-            <div id="courseInfo">
-            </div>
-        </div>
-        <div class="col-sm">
-            <div id="indepthInfo">
-                <h3> Next step, admission reqs and stuff </h3>
-                <button type="button" id="enrollButton" class="btn btn-primary" data-toggle="modal" data-target="#enrollSingleModal">Enroll</button>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-                    deserunt mollit anim id est laborum.</p>
-            </div>
-        </div>
-    </div>
-    
+
     <?php
         $searchQuery = '';
         if (!empty($_GET)) {
             $searchQuery = $_GET['courseCode'];
         }
     ?>
+    
+    <div class="row">
+        <div class="col-7">
+            <div id="courseInfo">
+            </div>
+        </div>
+        <div class="col-5">
+            <div id="nextStep" class="single-next-step">
+            </div>
+            <div id="indepthInfo" class="single-indepth-info">
+                <button type="button" id="enrollButton" class="btn btn-primary single-enroll-unenroll" data-toggle="modal" data-target="#enrollSingleModal">Enroll</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         var alreadyEnrolled = false;
 
@@ -38,17 +28,38 @@
             $(function(){
                 var url = 'https://script.google.com/macros/s/AKfycbx5zKAL58XAs8GAWrIP0XHQsIbmSusaYtWDS6Y8-u9kB_09h7Y/exec';
                 $.getJSON(url,function(data){
-                    var html = $('#courseInfo').html();
+                    var htmlMain = $('#courseInfo').html();
+                    var htmlAside = $('#indepthInfo').html();
+                    var htmlNext = $('#nextStep').html();
+                    var courseArrayEnrolled = JSON.parse(window.sessionStorage.getItem("courseArray"));
                     $.each(data, function(key,val){
                         if(val.length >= 8 && searchQuery == val[6].toString().toUpperCase() ) {
-                            html += '<h1>' + val[0] + '</h1>';
-                            html += '<h3>' + val[6] + '</h3>';
-                            html += '<p>' + val[2] + '</p>';
+                            htmlMain += '<h1>' + val[0] + '</h1>';
+                            htmlMain += '<span class="coursecode">' + val[6] + '</span>';
+                            htmlMain += '<p>' + val[2].replace(/\r\n|\n|\r/g, '<br />') + '</p>';
+                            htmlMain += '<h4>Objectives</h4><p>' + val[3].replace(/\r\n|\n|\r/g, '<br />') + '</p>';
                             
+                            if(courseArrayEnrolled.indexOf(val[6]) != -1){
+                                htmlNext += '<div class="next-step"><h5><i class="fas fa-exclamation-circle icon-next-step"></i> Next step</h5><p>Congratulations for successfully enrolling in ' + val[0] + '. Now all you got left to do is the following before the course start:</p><div class="single-steps"><ul><li>Enroll in Blackboard</li><li>Read through required reading for first class</li></ul></div></div>';
+                            }
+
+                            if(val[15] != ''){
+                                htmlAside += '<h6>Admission Requirement</h6><p>' + val[15].replace(/\r\n|\n|\r/g, '<br />') + '</p>';
+                            }
+                            if(val[16] != ''){
+                                htmlAside += '<h6>Time Table</h6><p>' + val[16].replace(/\r\n|\n|\r/g, '<br />') + '</p>';
+                            }
+                            if(val[17] != ''){
+                                htmlAside += '<h6>Mode of Instruction</h6><p>' + val[17].replace(/\r\n|\n|\r/g, '<br />') + '</p>';
+                            }
+                            if(val[18] != ''){
+                                htmlAside += '<h6>Assessment Method</h6><p>' + val[18].replace(/\r\n|\n|\r/g, '<br />') + '</p>';
+                            }
                         }
                     })
-                    $('#courseInfo').html(html);
-                    
+                    $('#courseInfo').html(htmlMain);
+                    $('#nextStep').html(htmlNext);
+                    $('#indepthInfo').html(htmlAside);
                 })
             })
         }

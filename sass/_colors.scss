@@ -10,6 +10,7 @@ $tertiary-button-hover: #003C7A;
 $tertiary-button-active: #ADC2D9;
 
 $text-color: #3B3E4C;
+$text-pressed: #858895;
 $icon-color: #D1D2D7;
 $icon-color-hover: #B0B2BA;
 $background-grey-dark: #ECEDEF;
@@ -17,3 +18,35 @@ $background-grey: #F9F9F9;
 $inactive: #DFE0E3;
 
 $green-button: #84C788;
+$red-button: #D7474B;
+
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+h6 {
+    font-size: 14px;
+    font-weight: 700;
+
+}
