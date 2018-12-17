@@ -114,8 +114,8 @@
     
     <script>
     $("body").tooltip({
-    selector: '[data-toggle="tooltip"]'
-});
+        selector: '[data-toggle="tooltip"]'
+    });
 
         function loadJson(searchQuery, category, program) {
             $(function(){

@@ -22,6 +22,9 @@
     </div>
 
     <script>
+        $("body").tooltip({
+            selector: '[data-toggle="tooltip"]'
+        });
         var alreadyEnrolled = false;
 
         function loadJson(searchQuery, category, program) {
@@ -44,6 +47,29 @@
                             if(courseArrayEnrolled.indexOf(val[6]) != -1){
                                 htmlNext += '<div class="next-step"><h5><i class="fas fa-exclamation-circle icon-next-step"></i> Next step</h5><p>Congratulations for successfully enrolling in ' + val[0] + '. Now all you got left to do is the following before the course start:</p><div class="single-steps"><ul><li>Enroll in Blackboard</li><li>Read through required reading for first class</li></ul></div></div>';
                             }
+                            htmlAside += '<div class="icon-detail-wrapper">'
+                            if(val[12] == true){
+                                htmlAside += '<span class="icon-detail"><i class="fas fa-book icon-true table-icon-list-single" data-toggle="tooltip" data-placement="right" title="Elective"></i>';
+                                htmlAside += 'Elective</span>';
+                            } else {
+                                htmlAside += '<span class="icon-detail"><i class="fas fa-book icon-false table-icon-list-single" data-toggle="tooltip" data-placement="right" title="Not elective"></i>';
+                                htmlAside += 'Not elective</span>';
+                            }
+                            if(val[13] == true){
+                                htmlAside += '<span class="icon-detail"><i class="fas fa-arrows-alt-h icon-true table-icon-list-single" data-toggle="tooltip" data-placement="right" title="Exchange possible"></i>';
+                                htmlAside += 'Exchange possible</span>';
+                            } else {
+                                htmlAside += '<span class="icon-detail"><i class="fas fa-arrows-alt-h icon-false table-icon-list-single" data-toggle="tooltip" data-placement="right" title="Exchange not possible"></i>';
+                                htmlAside += 'Exchange not possible</span>';
+                            }
+                            if(val[14] == true){
+                                htmlAside += '<span class="icon-detail"><i class="fas fa-globe-africa icon-true table-icon-list-single" data-toggle="tooltip" data-placement="right" title="Study abroad possible"></i>';
+                                htmlAside += 'Study abroad possible</span>';
+                            } else {
+                                htmlAside += '<span class="icon-detail"><i class="fas fa-globe-africa icon-false table-icon-list-single" data-toggle="tooltip" data-placement="right" title="Study abroad not possible"></i>';
+                                htmlAside += 'Study abroad not possible</span>';
+                            }
+                            htmlAside += '<br></div>'
 
                             if(val[15] != ''){
                                 htmlAside += '<h6>Admission Requirement</h6><p>' + val[15].replace(/\r\n|\n|\r/g, '<br />') + '</p>';

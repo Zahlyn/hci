@@ -235,6 +235,14 @@ header ul li a.inactive:active i, header ul li a.inactive:focus i {
   padding: 0 15px 15px;
 }
 
+.icon-detail {
+  display: block;
+  margin-bottom: 8px;
+}
+.icon-detail i {
+  margin-right: 8px;
+}
+
 body {
   color: #3B3E4C;
   font-family: "Open Sans", sans-serif;
