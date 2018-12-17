@@ -41,12 +41,14 @@
                     </div>
                     
                 </div>
-                <div class="row">
-                    <div class="col-sm">
-                            <p onclick="window.history.back()">Previous page</p>
-                    </div>
-                </div>
             </div>
         </header>
         <div class="container">
+            <?php if (strpos($_SERVER['SCRIPT_NAME'], 'index.php') == false) { ?>
+                <div class="row">
+                    <div class="col-sm">
+                            <p class="link" onclick="window.history.back()"><i class="fas fa-arrow-circle-left"></i> Back</p>
+                    </div>
+                </div>
+                <?php } ?>
         <?php include 'partials/modals.php'; ?>
