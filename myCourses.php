@@ -1,7 +1,11 @@
 <?php include 'partials/html-head.php'; ?>
     <div class="row">
         <div class="col-sm">
-            <p>Now time for testing</p>
+            <h3>My courses</h3>
+            <p>You are currently enrolled in the following courses</p>
+        </div>
+        <div class="col-sm">
+            <button type="button" class="btn btn-primary btn-search-enroll btn-search-unenroll" data-toggle="modal" data-target="#unenrollModal">Unenroll</button>
         </div>
     </div>
     <div class="row">
@@ -13,13 +17,13 @@
                         <th scope="col">Course</th>
                         <th scope="col">Code</th>
                         <th scope="col">Units</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody id="tableBody">
 
                 </tbody>
             </table>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#unenrollModal">Unenroll</button>
         </div>
     </div>        
     <script>
@@ -32,12 +36,39 @@
                     for(i in courseArray) {
                         if(val.length >= 8 && courseArray[i] == val[6].toString().toUpperCase()) {
 
-                            html += '<tr>';
-                            html += '<td><input type="checkbox" id="unenrollCheckbox' + key + '"</td>'
-                            html += '<td><a href="coursePage.php?courseCode=' + val[6] + '">' + val[0] + '</a></td>';
-                            html += '<td>' + val[6] + '</td>';
-                            html += '<td>' + val[7] + '</td>';
-                            html += '</tr>';
+                            if( val[5].toLowerCase() == 'exam'){
+                                        html += '<tr class="table-item-exam">';
+                                    } else {
+                                        html += '<tr class="table-item-course">';
+                                    }
+                                    html += '<td><input type="checkbox" id="enrollCheckbox' + key + '"</td>'
+                                    html += '<td><a class="table-title" href="coursePage.php?courseCode=' + val[6] + '">' + val[0] + '</a><span class="table-period">' + val[5] + ' - ' + val[11] + '</span><a class="table-title-see-more" href="coursePage.php?courseCode=' + val[6] + '">Read more</a></td>';
+                                    html += '<td>' + val[6] + '</td>';
+                                    html += '<td>' + val[7] + '</td>';
+                                    html += '<td>';
+                                    if(val[12] == true){
+                                        html += '<i class="fas fa-book icon-true table-icon-list" data-toggle="tooltip" data-placement="right" title="Elective"></i>';
+                                    } else {
+                                        html += '<i class="fas fa-book icon-false table-icon-list" data-toggle="tooltip" data-placement="right" title="Not elective"></i>';
+                                    }
+                                    if(val[13] == true){
+                                        html += '<i class="fas fa-arrows-alt-h icon-true table-icon-list" data-toggle="tooltip" data-placement="right" title="Exchange possible"></i>';
+                                    } else {
+                                        html += '<i class="fas fa-arrows-alt-h icon-false table-icon-list" data-toggle="tooltip" data-placement="right" title="Exchange not possible"></i>';
+                                    }
+                                    if(val[14] == true){
+                                        html += '<i class="fas fa-globe-africa icon-true table-icon-list" data-toggle="tooltip" data-placement="right" title="Study abroad possible"></i>';
+                                    } else {
+                                        html += '<i class="fas fa-globe-africa icon-false table-icon-list" data-toggle="tooltip" data-placement="right" title="Study abroad not possible"></i>';
+                                    }
+                                    html += '</td>';
+                                    html += '</tr>';
+                            // html += '<tr>';
+                            // html += '<td><input type="checkbox" id="unenrollCheckbox' + key + '"</td>'
+                            // html += '<td><a href="coursePage.php?courseCode=' + val[6] + '">' + val[0] + '</a></td>';
+                            // html += '<td>' + val[6] + '</td>';
+                            // html += '<td>' + val[7] + '</td>';
+                            // html += '</tr>';
                         }
                     }
                 })

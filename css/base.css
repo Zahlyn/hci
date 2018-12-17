@@ -248,6 +248,9 @@ button.btn-search-enroll {
   margin: 8px 0;
   min-width: 120px; }
 
+button.btn-search-unenroll {
+  margin-top: 35px; }
+
 table thead {
   border: none;
   background: #ECEDEF;
