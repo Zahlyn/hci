@@ -114,6 +114,7 @@
                 var url = 'https://script.google.com/macros/s/AKfycbx5zKAL58XAs8GAWrIP0XHQsIbmSusaYtWDS6Y8-u9kB_09h7Y/exec';
                 $.getJSON(url,function(data){
                     var html = $('#tableBody').html();
+                    var courseArrayEnrolled = JSON.parse(window.sessionStorage.getItem("courseArray"));
                     $('#searchBar').val(searchQuery);
                     $.each(data, function(key,val){
                         if(val.length >= 10 && (searchQuery == val[1].toLowerCase() 
@@ -122,13 +123,17 @@
                             || searchQuery == '')) {
                             if(category == '' || category == val[8].toLowerCase()) {
                                 if(program == '' || program == val[9].toLowerCase()) {
-                                    html += '<tr>';
-                                    if(val[5].toLowerCase() == 'exam'){
-                                        html += '<td><input class="checkbox-exam" type="checkbox" id="enrollCheckbox' + key + '"</td>' 
+                                    if( val[5].toLowerCase() == 'exam'){
+                                        html += '<tr class="table-item-exam">';
+                                    } else {
+                                        html += '<tr class="table-item-course">';
+                                    }
+                                    if(courseArrayEnrolled.indexOf(val[6]) != -1){
+                                        html += '<td><input disabled type="checkbox" id="enrollCheckbox' + key + '"</td>' 
                                     } else {
                                         html += '<td><input type="checkbox" id="enrollCheckbox' + key + '"</td>'
                                     }
-                                    html += '<td><a class="table-title" href="coursePage.php?courseCode=' + val[6] + '">' + val[0] + '</a><span class="table-period"> ' + val[11] + '</span></td>';
+                                    html += '<td><a class="table-title" href="coursePage.php?courseCode=' + val[6] + '">' + val[0] + '</a><span class="table-period"> ' + val[11] + '</span><a class="table-title-see-more" href="coursePage.php?courseCode=' + val[6] + '">Read more</a></td>';
                                     html += '<td>' + val[5] + '</td>';
                                     html += '<td>' + val[6] + '</td>';
                                     html += '<td>' + val[7] + '</td>';
