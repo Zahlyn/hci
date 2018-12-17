@@ -136,12 +136,12 @@
                                     } else {
                                         html += '<tr class="table-item-course">';
                                     }
-                                    if(courseArrayEnrolled.indexOf(val[6]) != -1){
+                                    if(courseArrayEnrolled.indexOf(val[6].toString()) != -1){
                                         html += '<td><input disabled data-toggle="tooltip" data-placement="right" title="Enrolled already" type="checkbox" id="enrollCheckbox' + key + '"</td>' 
                                     } else {
                                         html += '<td><input type="checkbox" id="enrollCheckbox' + key + '"</td>'
                                     }
-                                    if(courseArrayEnrolled.indexOf(val[6]) != -1){
+                                    if(courseArrayEnrolled.indexOf(val[6].toString()) != -1){
                                         html += '<td><i class="fas fa-check table-title-enrolled-check"></i><a class="table-title" href="coursePage.php?courseCode=' + val[6] + '">' + val[0] + '</a><span class="table-period">' + val[5] + ' - ' + val[11] + '</span><a class="table-title-see-more" href="coursePage.php?courseCode=' + val[6] + '">Read more</a></td>';
                                     } else {
                                         html += '<td><a class="table-title" href="coursePage.php?courseCode=' + val[6] + '">' + val[0] + '</a><span class="table-period"> ' + val[5] + ' - ' + val[11] + '</span><a class="table-title-see-more" href="coursePage.php?courseCode=' + val[6] + '">Read more</a></td>';
