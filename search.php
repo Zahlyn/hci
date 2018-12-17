@@ -15,7 +15,7 @@
     ?>
      <div class="row">
         <div class="col-sm academic-requirements-top">
-            <a href="search.php?program=Media"><i class="fas fa-graduation-cap"></i> See by academic requirement</a>
+            <p onclick="addProgram('Media')"><i class="fas fa-graduation-cap"></i> See by academic requirement</p>
         </div>
     </div>
     <div class="row">
@@ -237,6 +237,11 @@
 
         function addCategory(cat) {
             $('#categoryHidden').attr("value", cat);
+            $('#hiddenForm').submit();
+        }
+
+        function addProgram(pro) {
+            $('#programHidden').attr("value", pro);
             $('#hiddenForm').submit();
         }
     </script>
