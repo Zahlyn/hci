@@ -395,7 +395,6 @@ a.logotype img {
   border: none;
   background: none;
   padding-top: 13px;
-  width: 80%;
 }
 .search-hack input[type=text]:focus {
   box-shadow: none;

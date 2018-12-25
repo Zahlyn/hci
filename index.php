@@ -14,8 +14,8 @@
         <div class="col-sm">
             <form id="searchForm" action="search.php" method="get" class="">
                 <div class="form-group">
-                    <input type="text" id="searchBar" name="query" placeholder="Search course... (leave empty to see all)" class="form-control search-field">
-                    <input type="submit" id="searchSubmit" value="Search" class="btn btn-primary">
+                    <input type="text" id="searchBar" name="query" placeholder="Search course..." class="form-control search-field">
+                    <input type="submit" id="searchSubmit" value="Search" class="btn btn-primary"> <a style=" margin-left: 15px;" href="search.php">See all courses</a>
                 </div>
             </form>
         </div>

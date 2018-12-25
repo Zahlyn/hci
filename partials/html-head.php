@@ -44,10 +44,17 @@
             </div>
         </header>
         <div class="container">
-            <?php if (strpos($_SERVER['SCRIPT_NAME'], 'index.php') == false) { ?>
+            <?php if (strpos($_SERVER['SCRIPT_NAME'], 'index.php') == false && strpos($_SERVER['SCRIPT_NAME'], 'search.php') == false) { ?>
                 <div class="row">
                     <div class="col-sm">
                             <p class="link" onclick="window.history.back()"><i class="fas fa-arrow-circle-left"></i> Back</p>
+                    </div>
+                </div>
+                <?php } ?>
+                <?php if (strpos($_SERVER['SCRIPT_NAME'], 'search.php') == true) { ?>
+                    <div class="row">
+                    <div class="col-sm">
+                            <p class="link" onclick="window.location = 'index.php'"><i class="fas fa-arrow-circle-left"></i> Back</p>
                     </div>
                 </div>
                 <?php } ?>
