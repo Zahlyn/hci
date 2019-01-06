@@ -121,6 +121,23 @@
             
         }
 
+        var totalPoints = {}
+        function getTotals() {
+            var tableRows = document.getElementById('tableBody').children;
+            for(var i = 0; i < tableRows.length; i++) {
+                var row = tableRows[i];
+                var semester = row.children[1].children[1].innerHTML.substr(9)
+                var units = row.children[3].innerHTML
+
+                if(totalPoints[semester] == undefined) {
+                    totalPoints[semester] = 0
+                }
+                totalPoints[semester] = totalPoints[semester] + parseInt(units);
+            }
+            console.log(totalPoints)
+        }
+
+
         function enroll() {
             var courseArray = JSON.parse(window.sessionStorage.getItem("courseArray"));
             var tableRows = document.getElementById('tableBody').children;
