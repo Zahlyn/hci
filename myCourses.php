@@ -25,7 +25,11 @@
                 </tbody>
             </table>
         </div>
-    </div>        
+    </div>     
+    <div class="row">
+        <div class="col-sm" id="totals">
+        </div>
+    </div>      
     <script>
         function loadCourses() {
             var html = $('#tableBody').html();
@@ -75,6 +79,7 @@
                 $('#tableBody').html(html);
             })
             sort(1)
+            printTotals()
         }
 
         $(document).ready(loadCourses);
@@ -135,6 +140,13 @@
                 totalPoints[semester] = totalPoints[semester] + parseInt(units);
             }
             console.log(totalPoints)
+        }
+
+        function printTotals() {
+            getTotals()
+            Object.keys(totalPoints).forEach(function(key) {
+                $('#totals').html($('#totals').html() + key + " " + totalPoints[key] + "<br>");
+            });
         }
 
 
