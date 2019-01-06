@@ -99,9 +99,9 @@
                 <thead>
                     <tr>
                         <th scope="col"></th>
-                        <th scope="col">Course</th>
-                        <th scope="col">Code</th>
-                        <th scope="col">Units</th>
+                        <th scope="col" onclick="sort(1)">Course</th>
+                        <th scope="col" onclick="sort(2)">Code</th>
+                        <th scope="col" onclick="sort(3)">Units</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -175,7 +175,48 @@
             })
         }
 
-        
+        var lastSortedCol = 1, lastSortedAZ = 0
+        // lastSortedAZ true if a-z, false if z-a (backwards sort)
+        function sort(column) {
+            var table, rows, loop, i, x, y, doSwitch
+            table = $('#tableBody')
+            loop = true   
+
+            while(loop) {
+                loop = false
+                rows = table.children()
+
+                for(i = 0; i < rows.length-1; i++) {
+                    doSwitch = false;
+                    if(column === 1) {
+                        x = rows[i].getElementsByTagName("TD")[column].getElementsByTagName("a")[0]
+                        y = rows[i+1].getElementsByTagName("TD")[column].getElementsByTagName("a")[0]
+                    } else {
+                        x = rows[i].getElementsByTagName("TD")[column]
+                        y = rows[i+1].getElementsByTagName("TD")[column]
+                    }
+                    if(column == lastSortedCol && lastSortedAZ == 1) {
+                        if(x.innerHTML.toString().toLowerCase() < y.innerHTML.toString().toLowerCase()) {
+                            doSwitch = true
+                            break
+                        }
+                    } else if(x.innerHTML.toString().toLowerCase() > y.innerHTML.toString().toLowerCase()) {
+                        doSwitch = true
+                        break
+                    }
+                }
+                if(doSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i+1], rows[i])
+                    loop = true
+                }
+            }
+            lastSortedAZ = !lastSortedAZ
+            if(column != lastSortedCol) {
+                lastSortedAZ = 1
+            }
+            lastSortedCol = column
+            
+        }
 
         function loadQuery() {
             var searchQuery = "<?php echo $searchQuery; ?>".toString().toLowerCase();
@@ -183,6 +224,7 @@
             var program = "<?php echo $program; ?>".toString().toLowerCase();
             loadJson(searchQuery, category, program);
             showProgramCategoryTags(program, category);
+            sort(1)
         }
 
         function removeTag(type) {

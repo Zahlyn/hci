@@ -14,9 +14,9 @@
                 <thead>
                     <tr>
                         <th scope="col"></th>
-                        <th scope="col">Course</th>
-                        <th scope="col">Code</th>
-                        <th scope="col">Units</th>
+                        <th scope="col" onclick="sort(1)">Course</th>
+                        <th scope="col" onclick="sort(2)">Code</th>
+                        <th scope="col" onclick="sort(3)">Units</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -74,9 +74,52 @@
                 })
                 $('#tableBody').html(html);
             })
+            sort(1)
         }
 
         $(document).ready(loadCourses);
+
+        var lastSortedCol = 1, lastSortedMode = 0
+        function sort(column) {
+            var table, rows, loop, i, x, y, doSwitch
+            table = $('#tableBody')
+            loop = true   
+
+            while(loop) {
+                loop = false
+                rows = table.children()
+
+                for(i = 0; i < rows.length-1; i++) {
+                    doSwitch = false;
+                    if(column === 1) {
+                        x = rows[i].getElementsByTagName("TD")[column].firstChild
+                        y = rows[i+1].getElementsByTagName("TD")[column].firstChild
+                    } else {
+                        x = rows[i].getElementsByTagName("TD")[column]
+                        y = rows[i+1].getElementsByTagName("TD")[column]
+                    }
+                    if(column == lastSortedCol && lastSortedMode == 1) {
+                        if(x.innerHTML.toString().toLowerCase() < y.innerHTML.toString().toLowerCase()) {
+                            doSwitch = true
+                            break
+                        }
+                    } else if(x.innerHTML.toString().toLowerCase() > y.innerHTML.toString().toLowerCase()) {
+                        doSwitch = true
+                        break
+                    }
+                }
+                if(doSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i+1], rows[i])
+                    loop = true
+                }
+            }
+            lastSortedMode = !lastSortedMode
+            if(column != lastSortedCol) {
+                lastSortedMode = 1
+            }
+            lastSortedCol = column
+            
+        }
 
         function enroll() {
             var courseArray = JSON.parse(window.sessionStorage.getItem("courseArray"));
