@@ -407,4 +407,14 @@ i.table-icon-list {
 .loading-gone {
   display: none; }
 
+.points {
+  padding-right: 10px;
+  margin-left: 10px;
+  border-right: 1px solid #B0B2BA; }
+  .points.first {
+    margin-left: 0; }
+  .points.last {
+    border-right: none;
+    padding-right: 0; }
+
 /*# sourceMappingURL=base.css.map */

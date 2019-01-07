@@ -1,10 +1,12 @@
 <?php include 'partials/html-head.php'; ?>
     <div class="row">
-        <div class="col-sm">
+        <div class="col-sm-7">
             <h3>My courses</h3>
+            <span class="points first"><strong>2018 Fall:</strong> x Units</span> <span class="points"><strong>2019 Spring:</strong> x Units</span> <span class="points last"><strong>2019 Fall:</strong> x Units</span>
             <p>You are currently enrolled in the following courses</p>
+
         </div>
-        <div class="col-sm">
+        <div class="col-sm-5">
             <button type="button" class="btn btn-primary btn-search-enroll btn-search-unenroll" data-toggle="modal" data-target="#unenrollModal">Unenroll</button>
         </div>
     </div>
@@ -129,11 +131,11 @@
             lastSortedCol = column
             
         }
-
         var totalPoints = {}
         function getTotals() {
             var tableRows = document.getElementById('tableBody').children;
             for(var i = 0; i < tableRows.length; i++) {
+                
                 var row = tableRows[i];
                 var semester = row.children[1].children[1].innerHTML.substr(9)
                 var units = row.children[3].innerHTML
@@ -147,7 +149,7 @@
         }
 
         function printTotals() {
-            getTotals()
+            getTotals();
             Object.keys(totalPoints).forEach(function(key) {
                 $('#totals').html($('#totals').html() + key + " " + totalPoints[key] + "<br>");
             });

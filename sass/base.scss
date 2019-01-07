@@ -319,3 +319,16 @@ i.table-icon-list {
 .loading-gone {
     display: none;
 }
+
+.points {
+    padding-right: 10px;
+    margin-left: 10px;
+    border-right: 1px solid $icon-color-hover;
+    &.first {
+        margin-left: 0;
+    }
+    &.last {
+        border-right: none;
+        padding-right: 0;
+    }
+}
