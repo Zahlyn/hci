@@ -25,16 +25,34 @@
             <p>Or explore a category that interests you</p>
             <ul class="category-list">
                 <li>
+                    <a href="search.php?category=Astronomy">Astronomy</a>
+                </li>
+                <li>
+                    <a href="search.php?program=&category=Behaviour+and+society">Behaviour and society</a>
+                </li>
+                <li>
+                    <a href="search.php?program=&category=Communication+and+education">Communication and education</a>
+                </li>
+                <li>
+                    <a href="search.php?program=&category=Culture%2C+and+history">Culture and history</a>
+                </li>
+                <li>
+                    <a href="search.php?program=&category=Durability+and+Environment">Durability and environment</a>
+                </li>
+                <li>
+                    <a href="search.php?program=&category=Economics">Economics and companie</a>
+                </li>
+                <li>
+                    <a href="search.php?program=&category=Law+and+government">Law and government</a>
+                </li>
+                <li>
                     <a href="search.php?category=Music,%20art%20and%20design">Music, art and design</a>
                 </li>
                 <li>
                     <a href="search.php?category=Natural%20and%20Computer%20sciences">Natural and Computer sciences</a>
                 </li>
                 <li>
-                    <a href="search.php?category=Astronomy">Astronomy</a>
-                </li>
-                <li>
-                    <a href="search.php?category=Economics">Economics</a>
+                    <a href="search.php?program=&category=Religion+and+philosophy">Religion and philosophy</a>
                 </li>
             </ul> 
         </div>

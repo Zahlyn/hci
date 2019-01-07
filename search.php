@@ -59,24 +59,24 @@
                     <div class="row">
                         <div class="col-sm">
                             <ul>
+                                <li class="category-item" onclick="addCategory('Astronomy')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Astronomy</label></li>
                                 <li class="category-item" onclick="addCategory('Behaviour and society')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Behaviour and society</label></li>
-                                <li class="category-item" onclick="addCategory('Durability and Environment')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Durability and Environment</label></li>
-                                <li class="category-item" onclick="addCategory('Law and government')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Law and government</label></li>
-                                <li class="category-item" onclick="addCategory('Religion and philosophy')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Religion and philosophy</label></li>
+                                <li class="category-item" onclick="addCategory('Communication and education')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Communication and education</label></li>
+                                <li class="category-item" onclick="addCategory('Culture, and history')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Culture, and history</label></li>
                             </ul> 
                         </div>
                         <div class="col-sm">
                             <ul>
-                                <li class="category-item" onclick="addCategory('Communication and education')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Communication and education</label></li>
+                            <li class="category-item" onclick="addCategory('Durability and Environment')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Durability and environment</label></li>
                                 <li class="category-item" onclick="addCategory('Economics')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Economics and companies</label></li>
-                                <li class="category-item" onclick="addCategory('Music, art and design')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Music, art and design</label></li>
+                                <li class="category-item" onclick="addCategory('Law and government')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Law and government</label></li>
                             </ul>
                         </div>
                         <div class="col-sm">
                             <ul>
-                                <li class="category-item" onclick="addCategory('Culture, and history')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Culture, and history</label></li>
-                                <li class="category-item" onclick="addCategory('Astronomy')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Astronomy</label></li>
+                            <li class="category-item" onclick="addCategory('Music, art and design')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Music, art and design</label></li>
                                 <li class="category-item" onclick="addCategory('Natural and computer sciences')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Natural and computer sciences</label></li>
+                                <li class="category-item" onclick="addCategory('Religion and philosophy')"><label class="container-checkbox"><input type="checkbox" name="musicartdesign" value="Music"><span class="checkmark"></span>Religion and philosophy</label></li>
                             </ul>
                         </div>
                     </div>
