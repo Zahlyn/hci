@@ -11,12 +11,18 @@
         <div class="col-7">
             <div id="courseInfo">
             </div>
+            <div class="loading">
+                <i class="fas fa-spinner fa-spin"></i>
+            </div>
         </div>
         <div class="col-5">
             <div id="nextStep" class="single-next-step">
             </div>
             <div id="indepthInfo" class="single-indepth-info">
                 <button type="button" id="enrollButton" class="btn btn-primary single-enroll-unenroll" data-toggle="modal" data-target="#enrollSingleModal">Enroll</button>
+            </div>
+            <div class="loading">
+                <i class="fas fa-spinner fa-spin"></i>
             </div>
         </div>
     </div>
@@ -103,6 +109,7 @@
                             htmlMain += '<a class="exam-view" href="coursePage.php?courseCode=' + val[10] + '">View</a></div>';
                         }
                     })
+                    $('.loading').addClass('loading-gone');
                     $('#courseInfo').html(htmlMain);
                     $('#nextStep').html(htmlNext);
                     $('#indepthInfo').html(htmlAside);

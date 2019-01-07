@@ -21,9 +21,12 @@
                     </tr>
                 </thead>
                 <tbody id="tableBody">
-
+                    
                 </tbody>
             </table>
+            <div class="loading">
+                <i class="fas fa-spinner fa-spin"></i>
+            </div>
         </div>
     </div>     
     <div class="row">
@@ -76,6 +79,7 @@
                         }
                     }
                 })
+                $('.loading').addClass('loading-gone');
                 $('#tableBody').html(html);
             })
             sort(1)

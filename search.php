@@ -109,6 +109,9 @@
 
                 </tbody>
             </table>
+            <div class="loading">
+                <i class="fas fa-spinner fa-spin"></i>
+            </div>
         </div>
     </div>
     
@@ -170,6 +173,7 @@
                             }
                         }
                     })
+                    $('.loading').addClass('loading-gone');
                     $('#tableBody').html(html);
                 })
             })

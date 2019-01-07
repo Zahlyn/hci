@@ -307,3 +307,15 @@ i.table-icon-list {
     cursor: pointer;
     color: $tertiary-button;
 }
+
+.loading {
+    text-align: center;
+    color: $icon-color-hover;
+    i.fa-spinner {
+        font-size: 30px;
+    }
+}
+
+.loading-gone {
+    display: none;
+}
