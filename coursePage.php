@@ -45,7 +45,7 @@
                             }
                             
                             if(courseArrayEnrolled.indexOf(val[6]) != -1){
-                                htmlNext += '<div class="next-step"><h5><i class="fas fa-exclamation-circle icon-next-step"></i> Next step</h5><p>Congratulations for successfully enrolling in ' + val[0] + '. Now all you got left to do is the following before the course start:</p><div class="single-steps"><ul><li>Enroll in Blackboard</li><li>Read through required reading for first class</li></ul></div></div>';
+                                htmlNext += '<div class="next-step"><h5><i class="fas fa-exclamation-circle icon-next-step"></i> Next step</h5><p>Congratulations for successfully enrolling in ' + val[0] + '. Now all you got left to do is the following before the course start:</p><div class="single-steps"><ul><li>Sign up for the exam</li><li>Enroll in Blackboard</li><li>Read through required reading for first class</li></ul></div></div>';
                             }
                             htmlAside += '<div class="icon-detail-wrapper">'
                             if(val[12] == true){
