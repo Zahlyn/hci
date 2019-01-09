@@ -320,6 +320,16 @@ i.table-icon-list {
     display: none;
 }
 
+#totals {
+    span:first-of-type {
+        margin-left: 0;
+    }
+    span:last-of-type {
+        border-right: none;
+        padding-right: 0;
+    }
+}
+
 .points {
     padding-right: 10px;
     margin-left: 10px;
@@ -331,4 +341,13 @@ i.table-icon-list {
         border-right: none;
         padding-right: 0;
     }
+}
+
+.hide {
+    display: none;
+}
+
+#showPointsBtn {
+    color: $tertiary-button;
+    cursor: pointer;
 }

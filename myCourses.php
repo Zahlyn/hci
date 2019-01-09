@@ -2,12 +2,10 @@
     <div class="row">
         <div class="col-sm-7">
             <h3>My courses</h3>
-            <span class="points first"><strong>2018 Fall:</strong> x Units</span> <span class="points"><strong>2019 Spring:</strong> x Units</span> <span class="points last"><strong>2019 Fall:</strong> x Units</span>
+            <div id="totals"></div>
+            <a id="showPointsBtn" onclick="printTotals()" class=""><i class="fas fa-plus"></i> See units per semester</a>
             <p>You are currently enrolled in the following courses</p>
 
-        </div>
-        <div class="col-sm-5">
-            <button type="button" onclick="printTotals()" class="btn btn-primary" data-toggle="modal">Show total points</button>
         </div>
         <div class="col-sm-5">
             <button type="button" class="btn btn-primary btn-search-enroll btn-search-unenroll" data-toggle="modal" data-target="#unenrollModal">Unenroll</button>
@@ -34,10 +32,6 @@
             </div>
         </div>
     </div>     
-    <div class="row">
-        <div class="col-sm" id="totals">
-        </div>
-    </div>      
     <script>
         function loadCourses() {
             var html = $('#tableBody').html();
@@ -86,6 +80,7 @@
                 })
                 $('.loading').addClass('loading-gone');
                 $('#tableBody').html(html);
+                console.log(courseArray);
             })
             sort(1)
             //printTotals()
@@ -154,8 +149,13 @@
         function printTotals() {
             getTotals();
             Object.keys(totalPoints).forEach(function(key) {
-                $('#totals').html($('#totals').html() + key + " " + totalPoints[key] + "<br>");
+                if (key == "18 Fall"){
+                    $('#totals').html($('#totals').html() + "<span class=\"points hide\"><strong>" + key + ":</strong> " + totalPoints[key] + " Units</span>");
+                } else {
+                    $('#totals').html($('#totals').html() + "<span class=\"points\"><strong>" + key + ":</strong> " + totalPoints[key] + " Units</span>");
+                }
             });
+            $('#showPointsBtn').addClass('hide');
         }
 
 
