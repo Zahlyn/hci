@@ -7,6 +7,9 @@
 
         </div>
         <div class="col-sm-5">
+            <button type="button" onclick="printTotals()" class="btn btn-primary" data-toggle="modal">Show total points</button>
+        </div>
+        <div class="col-sm-5">
             <button type="button" class="btn btn-primary btn-search-enroll btn-search-unenroll" data-toggle="modal" data-target="#unenrollModal">Unenroll</button>
         </div>
     </div>
@@ -85,7 +88,7 @@
                 $('#tableBody').html(html);
             })
             sort(1)
-            printTotals()
+            //printTotals()
         }
 
         $(document).ready(loadCourses);
